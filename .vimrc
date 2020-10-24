@@ -17,5 +17,8 @@ set breakindent
 
 imap jk <Esc>
 
-:set wrap linebreak
+set wrap linebreak
 set ignorecase
+
+set clipboard=unnamed
+
