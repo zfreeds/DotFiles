@@ -1,5 +1,6 @@
 "To simlink, use full paths ln -s originalfile targetDir
 " to get the original path call readlink thisFile
+" To add plugins, add the plugin to ~/.vim/
 
 syntax on
 
@@ -20,5 +21,8 @@ imap jk <Esc>
 set wrap linebreak
 set ignorecase
 
-set clipboard=unnamed
-
+" Spell check
+set spell
+hi clear SpellBad
+hi SpellBad cterm=underline
+"hi SpellBad gui=undercurl
