@@ -20,9 +20,21 @@ imap jk <Esc>
 
 set wrap linebreak
 set ignorecase
+filetype indent on
 
 " Spell check
 set spell
 hi clear SpellBad
 hi SpellBad cterm=underline
 "hi SpellBad gui=undercurl
+
+set tabstop=4
+set shiftwidth=4
+
+
+set path+=** "Search can now look in subfolders
+set wildmenu "Display all matching files when we tab complete
+
+:set iskeyword+=\- "Autcomplete completes hyphenated words
+set clipboard=unnamedplus
+

@@ -1,0 +1,15 @@
+"To simlink, use full paths ln -s originalfile targetDir
+" to get the original path call readlink thisFile
+" To add plugins, add the plugin to ~/.vim/
+
+source ~/.vimrc
+
+set ideajoin " enable join via the IDE
+set ideaput " clipboard
+set ideamarks " sync bookmarks with idea
+
+
+set NERDTree
+set surround
+set highlightedyank
+set which-key
