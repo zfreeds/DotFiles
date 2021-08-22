@@ -45,3 +45,6 @@ nmap <leader>d <C-d>
 nmap <leader>u <C-u>
 vmap <leader>d <C-d>
 vmap <leader>u <C-u>
+
+nmap <Leader>o :call GotoJump()<CR>
+
