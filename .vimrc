@@ -10,6 +10,7 @@ set relativenumber
 
 set laststatus=2 " always show bottom bar
 
+let mapleader = " "
 let g:user_emmet_leader_key=','
 
 set autoindent
@@ -38,3 +39,9 @@ set wildmenu "Display all matching files when we tab complete
 :set iskeyword+=\- "Autcomplete completes hyphenated words
 set clipboard=unnamedplus
 
+
+" Scrolling
+nmap <leader>d <C-d>
+nmap <leader>u <C-u>
+vmap <leader>d <C-d>
+vmap <leader>u <C-u>

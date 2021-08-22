@@ -7,9 +7,17 @@ source ~/.vimrc
 set ideajoin " enable join via the IDE
 set ideaput " clipboard
 set ideamarks " sync bookmarks with idea
+set idearefactormode=keep
 
 
+nmap <leader>h :action PreviousTab<CR>
+nmap <leader>l :action NextTab<CR>
+nmap <leader>bd :action CloseEditor<CR>
+
+nmap ]d :action  GotoImplementation<CR>
+nmap [d :action  GotoSuperMethod<CR>
+
+" Extensions
 set NERDTree
 set surround
 set highlightedyank
-set which-key
