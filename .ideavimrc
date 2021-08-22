@@ -14,8 +14,8 @@ nmap <leader>h :action PreviousTab<CR>
 nmap <leader>l :action NextTab<CR>
 nmap <leader>bd :action CloseEditor<CR>
 
-nmap ]d :action  GotoImplementation<CR>
-nmap [d :action  GotoSuperMethod<CR>
+nmap <leader>] :action  GotoImplementation<CR>
+nmap <leader>[ :action  GotoSuperMethod<CR>
 
 " Extensions
 set NERDTree
