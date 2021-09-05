@@ -2,7 +2,6 @@
 " to get the original path call readlink thisFile
 " To add plugins, add the plugin to ~/.vim/
 
-
 " Vim-plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -23,6 +22,8 @@ Plug 'airblade/vim-gitgutter'
 " Briefly highlight which text was yanked.
 Plug 'machakann/vim-highlightedyank'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'mattn/emmet-vim'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 " End vim-plug
@@ -220,9 +221,9 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 let g:coc_global_extensions = [
 	\ 'coc-snippets',
 	\ 'coc-pairs',
+	\ 'coc-html',
 	\ 'coc-json']
 """"""""""""""""""""""""""""""""
-
 syntax on
 
 set number
@@ -258,7 +259,6 @@ set path+=** "Search can now look in subfolders
 set wildmenu "Display all matching files when we tab complete
 
 :set iskeyword+=\- "Autcomplete completes hyphenated words
-set clipboard=unnamedplus
 
 
 " Scrolling
