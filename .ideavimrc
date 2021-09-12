@@ -20,3 +20,6 @@ nmap <leader>[ :action  GotoSuperMethod<CR>
 set NERDTree
 set surround
 set highlightedyank
+
+
+CocDisable

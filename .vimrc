@@ -23,11 +23,28 @@ Plug 'airblade/vim-gitgutter'
 Plug 'machakann/vim-highlightedyank'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mattn/emmet-vim'
-Plug 'morhetz/gruvbox'
+Plug 'doums/darcula'
 call plug#end()
 
 " End vim-plug
-
+"""""""""" Color scheme """"""""""
+colorscheme darcula
+"set termguicolors (Only works with true color terms)
+hi! link CocErrorSign ErrorSign
+hi! link CocWarningSign WarningSign
+hi! link CocInfoSign InfoSign
+hi! link CocHintSign HintSign
+hi! link CocErrorFloat Pmenu
+hi! link CocWarningFloat Pmenu
+hi! link CocInfoFloat Pmenu
+hi! link CocHintFloat Pmenu
+hi! link CocHighlightText IdentifierUnderCaret
+hi! link CocHighlightRead IdentifierUnderCaret
+hi! link CocHighlightWrite IdentifierUnderCaretWrite
+hi! link CocErrorHighlight CodeError
+hi! link CocWarningHighlight CodeWarning
+hi! link CocInfoHighlight CodeInfo
+hi! link CocHintHighlight CodeHint
 """""""""" NERD TREE """"""""""
 
 " Start NERDTree and put the cursor back in the other window.
@@ -240,6 +257,7 @@ set smartindent
 set breakindent
 
 imap jk <Esc>
+set clipboard=unnamed
 
 set wrap linebreak
 set ignorecase
@@ -268,14 +286,13 @@ vmap <leader>d <C-d>
 vmap <leader>u <C-u>
 
 nmap <Leader>o :call GotoJump()<CR>
-nnoremap <C-p> :GFiles<CR>
+nnoremap <C-p> :FZF<CR>
 
 " Split navigation
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
 
 " Prevent selecting and pasting from overwriting what you originally copied.
 xnoremap p pgvy
