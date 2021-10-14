@@ -24,6 +24,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mattn/emmet-vim'
 Plug 'morhetz/gruvbox'
+Plug 'vimwiki/vimwiki'
 call plug#end()
 
 " End vim-plug
