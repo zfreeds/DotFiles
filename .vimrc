@@ -298,3 +298,10 @@ nnoremap <C-H> <C-W><C-H>
 
 " Prevent selecting and pasting from overwriting what you originally copied.
 xnoremap p pgvy
+
+set nocompatible
+filetype plugin on
+
+" Vimwiki
+nnoremap <leader>wk :VimwikiDiaryPrevDay<CR>
+nnoremap <leader>wj :VimwikiDiaryNextDay<CR>
