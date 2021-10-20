@@ -26,6 +26,8 @@ Plug 'mattn/emmet-vim'
 Plug 'morhetz/gruvbox'
 Plug 'vimwiki/vimwiki'
 Plug 'doums/darcula'
+Plug 'inkarkat/vim-ReplaceWithRegister'
+
 call plug#end()
 
 " End vim-plug
@@ -131,7 +133,8 @@ nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
+" FIXME
+" nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
@@ -263,6 +266,7 @@ set clipboard=unnamed
 
 set wrap linebreak
 set ignorecase
+set smartcase
 filetype indent on
 
 " Spell check
@@ -291,13 +295,13 @@ nmap <Leader>o :call GotoJump()<CR>
 nnoremap <C-p> :FZF<CR>
 
 " Split navigation
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+nnoremap <C-j> <C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
+nnoremap <C-l> <C-w><C-l>
+nnoremap <C-h> <C-w><C-h>
 
-" Prevent selecting and pasting from overwriting what you originally copied.
-xnoremap p pgvy
+" Prevent copying letters you cut
+nnoremap x "_x
 
 set nocompatible
 filetype plugin on
@@ -305,3 +309,44 @@ filetype plugin on
 " Vimwiki
 nnoremap <leader>wk :VimwikiDiaryPrevDay<CR>
 nnoremap <leader>wj :VimwikiDiaryNextDay<CR>
+
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+
+augroup customVimWiki | au!
+	autocmd BufNewFile ~/vimwiki/diary/*.md
+				\ exe ".!date" |
+				\ exe  ":normal i# " |
+				\ exe ":normal 4whr\ro" |
+				set nomodified
+augroup end
+
+" Select line  https://vi.stackexchange.com/a/21238
+xnoremap il g_o^
+onoremap il :normal vil<CR>
+xnoremap al $o^
+onoremap al :normal V<CR>
+
+" vim surround, use gs instead of ys
+nmap gs ys
+
+
+nnoremap <leader>sp  :.s/,/,\r/g<cr>
+
+augroup centering | au!
+	" Center when entering insert mode
+	autocmd InsertEnter * norm zz
+augroup end
+
+" Alias replace all to S
+ nnoremap S :%s//g<Left><Left>
+ set mouse=a
+ set cursorline
+ set wildmode=longest,list,full
+ set splitbelow splitright
+
+set scrolloff=3 " Display at least 3 lines around you cursor
+set visualbell
+set noerrorbells
+
+
