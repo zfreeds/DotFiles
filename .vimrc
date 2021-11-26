@@ -331,6 +331,7 @@ onoremap al :normal V<CR>
 nmap gs ys
 
 
+vnoremap p "_dP
 nnoremap <leader>sp  :.s/,/,\r/g<cr>
 
 augroup centering | au!
