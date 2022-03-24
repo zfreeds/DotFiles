@@ -140,6 +140,8 @@ nnoremap <C-h> <C-w><C-h>
 
 " Prevent copying letters you cut
 nnoremap x "_x
+" Prevent copying letters you paste over
+vnoremap p "_dP
 
 " Select line  https://vi.stackexchange.com/a/21238
 xnoremap il g_o^
@@ -149,6 +151,8 @@ onoremap al :normal V<CR>
 
 " Alias replace all to S
 nnoremap S :%s//g<Left><Left>
+
+nnoremap <leader>sp  :.s/,/,\r/g<cr>
 
 " vim surround, use gs instead of ys
 nmap gs ys
