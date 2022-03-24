@@ -10,6 +10,7 @@ set ideamarks " sync bookmarks with idea
 set idearefactormode=keep
 set ReplaceWithRegister
 
+" TODO make sure we do this in normal vim too
 nmap <leader>h :action PreviousTab<CR>
 nmap <leader>l :action NextTab<CR>
 nmap <leader>bd :action CloseEditor<CR>
@@ -21,6 +22,7 @@ nnoremap ]] :action MethodDown<CR>
 
 
 " Extensions
+Plug 'preservim/nerdtree`
 set NERDTree
 set surround
 set highlightedyank
@@ -31,6 +33,9 @@ CocDisable
 " :actionlist for all commands
 
 " KEYMAP
+
+" Overriding Values
+"nnoremap <C-n> :NERDTreeToggle<CR>
 
 " Menus
 nnoremap <leader>m :action ActivateProjectToolWindow<CR>
@@ -67,8 +72,10 @@ vmap <leader>rr :action Refactorings.QuickListPopupAction<CR>
 " GoTo
 nnoremap gd :action GotoDeclaration<CR>
 nnoremap <leader>gi :action GotoImplementation<CR>
-"nnoremap <leader>gu :action ShowUsages<CR>
-"nnoremap <leader>sd :action QuickImplementations<CR>
+" Look into findUsages vs showUsages
+nnoremap <leader>gu :action FindUsages<CR>
+" Show definition
+nnoremap <leader>sd :action QuickImplementations<CR>
 nnoremap <leader>gc :action VcsShowNextChangeMarker<cr>
 nnoremap <leader>gC :action VcsShowPrevChangeMarker<cr>
 
