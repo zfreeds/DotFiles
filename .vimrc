@@ -14,21 +14,26 @@ endif
 
 call plug#begin('~/.vim/plugged')
 " Put plugins here
-Plug 'michaeljsmith/vim-indent-object'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'preservim/nerdtree'
+Plug 'tpope/vim-sensible'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-gitgutter'
-" Briefly highlight which text was yanked.
-Plug 'machakann/vim-highlightedyank'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'mattn/emmet-vim'
-Plug 'morhetz/gruvbox'
-Plug 'vimwiki/vimwiki'
 Plug 'doums/darcula'
 Plug 'inkarkat/vim-ReplaceWithRegister'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'machakann/vim-highlightedyank' " Briefly highlight which text was yanked.
+Plug 'mattn/emmet-vim'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'morhetz/gruvbox'
+Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
+Plug 'vim-scripts/argtextobj.vim'
+Plug 'vimwiki/vimwiki'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'tpope/vim-abolish' "Mostly used for changing case
+Plug 'tpope/vim-repeat' " dot works as expected on plugins
+Plug 'tpope/vim-fugitive' "Git
 
 call plug#end()
 
@@ -177,6 +182,13 @@ augroup customVimWiki | au!
 				set nomodified
 augroup end
 
+""""""" GOYO and Limelight """""
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
+let g:limelight_conceal_ctermfg = 'DarkGray'
+let g:limelight_paragraph_span = 1
+let g:goyo_linenr = 1
 
 """"""""""  Misc  """"""""""
 augroup centering | au!
