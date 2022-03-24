@@ -254,7 +254,8 @@ set relativenumber
 
 set laststatus=2 " always show bottom bar
 
-let mapleader = " "
+let mapleader = "\<Space>"
+
 let g:user_emmet_leader_key=','
 
 set autoindent
