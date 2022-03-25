@@ -96,6 +96,8 @@ set number
 set relativenumber
 set laststatus=2 " always show bottom bar
 
+set directory^=$HOME/.vim/swap// " Set swp file location if exists. 
+
 set autoindent
 set smartindent
 set breakindent
