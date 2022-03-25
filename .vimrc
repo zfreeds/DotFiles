@@ -39,22 +39,28 @@ call plug#end()
 
 """""""""" Color scheme """"""""""
 colorscheme darcula
-"set termguicolors (Only works with true color terms)
-hi! link CocErrorSign ErrorSign
-hi! link CocWarningSign WarningSign
-hi! link CocInfoSign InfoSign
-hi! link CocHintSign HintSign
-hi! link CocErrorFloat Pmenu
-hi! link CocWarningFloat Pmenu
-hi! link CocInfoFloat Pmenu
-hi! link CocHintFloat Pmenu
-hi! link CocHighlightText IdentifierUnderCaret
-hi! link CocHighlightRead IdentifierUnderCaret
-hi! link CocHighlightWrite IdentifierUnderCaretWrite
-hi! link CocErrorHighlight CodeError
-hi! link CocWarningHighlight CodeWarning
-hi! link CocInfoHighlight CodeInfo
-hi! link CocHintHighlight CodeHint
+"set termguicolors  " (Only works with true color terms)
+hi! link GitGutterAdd GitAddStripe
+hi! link GitGutterChange GitChangeStripe
+hi! link GitGutterDelete GitDeleteStripe
+let g:gitgutter_sign_removed = '▶'
+
+"hi! link CocErrorSign ErrorSign
+"hi! link CocWarningSign WarningSign
+"hi! link CocInfoSign InfoSign
+"hi! link CocHintSign HintSign
+"hi! link CocErrorFloat Pmenu
+"hi! link CocWarningFloat Pmenu
+"hi! link CocInfoFloat Pmenu
+"hi! link CocHintFloat Pmenu
+"hi! link CocHighlightText IdentifierUnderCaret
+"hi! link CocHighlightRead IdentifierUnderCaret
+"hi! link CocHighlightWrite IdentifierUnderCaretWrite
+"hi! link CocErrorHighlight CodeError
+"hi! link CocWarningHighlight CodeWarning
+"hi! link CocInfoHighlight CodeInfo
+"hi! link CocHintHighlight CodeHint
+"
 """""""""" NERD TREE """"""""""
 
 " Start NERDTree and put the cursor back in the other window.
