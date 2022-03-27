@@ -34,6 +34,8 @@ Plug 'junegunn/limelight.vim'
 Plug 'tpope/vim-abolish' "Mostly used for changing case
 Plug 'tpope/vim-repeat' " dot works as expected on plugins
 Plug 'tpope/vim-fugitive' "Git
+" * searches for visually selected pattern
+Plug 'nelstrom/vim-visual-star-search'
 
 call plug#end()
 
@@ -156,6 +158,19 @@ nnoremap x "_x
 " Prevent copying letters you paste over
 vnoremap p "_dP
 
+" Copy end of line only
+nnoremap Y yg$
+
+" Center search results
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" Moving text
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+nnoremap <leader>j :m .+1<CR>==
+nnoremap <leader>k :m .-2<CR>==
+
 " Select line  https://vi.stackexchange.com/a/21238
 xnoremap il g_o^
 onoremap il :normal vil<CR>
@@ -202,4 +217,18 @@ let g:goyo_linenr = 1
 augroup centering | au!
 	" Center when entering insert mode
 	autocmd InsertEnter * norm zz
+augroup end
+
+
+" Apply macros to each line in visual mode
+xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
+
+function! ExecuteMacroOverVisualRange()
+  echo "@".getcmdline()
+  execute ":'<,'>normal @".nr2char(getchar())
+endfunction
+
+augroup autosourcevimrc | au!
+	" Auto source vimrc
+	autocmd bufwritepost .vimrc source $MYVIMRC
 augroup end
