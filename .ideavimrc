@@ -112,4 +112,4 @@ nnoremap <s-TAB> :action NextTab<CR>
 nnoremap <leader>l :action RecentLocations<CR>
 nnoremap <c-/> :action FindInPath<CR>
 nnoremap <c-p> :action FindInPath<CR>
-nnoremap <c-o> :action GotoSymbol<CR>
+" nnoremap <c-o> :action GotoSymbol<CR>
