@@ -71,7 +71,9 @@ vmap <leader>rr :action Refactorings.QuickListPopupAction<CR>
 
 " GoTo
 nnoremap gd :action GotoDeclaration<CR>
-nnoremap <leader>gi :action GotoImplementation<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gp :action GoToSuperMethod<CR>
+nnoremap gt :action GotoTest<CR>
 " Look into findUsages vs showUsages
 nnoremap <leader>gu :action FindUsages<CR>
 " Show definition
@@ -92,3 +94,22 @@ nnoremap <c-i> :action Forward<cr>
 nnoremap ge :action GotoNextError<cr>
 nnoremap gE :action GotoPreviousError<cr>
 
+
+nnoremap <c-z> :action ToggleDistractionFreeMode<CR>
+nnoremap <c-x> :action HideAllWindows<CR>
+nnoremap <c-t> :action ActivateTerminalToolWindow<CR>
+
+nnoremap <c-\> :action SplitVertically<CR>
+nnoremap <c--> :action SplitHorizontally<CR>
+nnoremap <c-=> :action Unsplit<CR>
+nnoremap <c-m> :action MoveEditorToOppositeTabGroup<CR>
+
+nnoremap <TAB> :action PreviousTab<CR>
+nnoremap <s-TAB> :action NextTab<CR>
+
+" todo find in all files
+" todo find file
+nnoremap <leader>l :action RecentLocations<CR>
+nnoremap <c-/> :action FindInPath<CR>
+nnoremap <c-p> :action FindInPath<CR>
+nnoremap <c-o> :action GotoSymbol<CR>
