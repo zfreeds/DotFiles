@@ -15,8 +15,6 @@ nmap <leader>h :action PreviousTab<CR>
 nmap <leader>l :action NextTab<CR>
 nmap <leader>bd :action CloseEditor<CR>
 
-nmap <leader>] :action  GotoImplementation<CR>
-nmap <leader>[ :action  GotoSuperMethod<CR>
 nnoremap [[ :action MethodUp<CR>
 nnoremap ]] :action MethodDown<CR>
 
@@ -104,12 +102,9 @@ nnoremap <c--> :action SplitHorizontally<CR>
 nnoremap <c-=> :action Unsplit<CR>
 nnoremap <c-m> :action MoveEditorToOppositeTabGroup<CR>
 
-nnoremap <TAB> :action PreviousTab<CR>
-nnoremap <s-TAB> :action NextTab<CR>
+nnoremap <TAB> :action NextTab<CR>
+nnoremap <s-TAB> :action PreviousTab<CR>
 
-" todo find in all files
-" todo find file
 nnoremap <leader>l :action RecentLocations<CR>
 nnoremap <c-/> :action FindInPath<CR>
-nnoremap <c-p> :action FindInPath<CR>
-" nnoremap <c-o> :action GotoSymbol<CR>
+nnoremap <c-p> :action GotoFile<CR>
