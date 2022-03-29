@@ -190,6 +190,11 @@ nnoremap <leader>sp  :.s/,/,\r/g<cr>
 " Allow navigating to files that don't exist
 map gf :edit <cfile><cr>
 
+" Toggle case and start typing. E.g. `<leader>iget`: `property` -> `getProperty`
+map <leader>i ~hi
+" Remove selection and toggle case. E.g. `v2l<leader>d`: `getProperty` -> `property`
+vmap <leader>d d~h
+
 """"""""""  VimWiki  """"""""""
 nnoremap <leader>wk :VimwikiDiaryPrevDay<CR>
 nnoremap <leader>wj :VimwikiDiaryNextDay<CR>
