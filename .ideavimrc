@@ -71,7 +71,7 @@ vmap <leader>rr :action Refactorings.QuickListPopupAction<CR>
 nnoremap gd :action GotoDeclaration<CR>
 nnoremap gi :action GotoImplementation<CR>
 nnoremap gp :action GoToSuperMethod<CR>
-nnoremap gt :action GotoTest<CR>
+nnoremap <leader>gt :action GotoTest<CR>
 " Look into findUsages vs showUsages
 nnoremap <leader>gu :action FindUsages<CR>
 " Show definition
@@ -94,7 +94,7 @@ nnoremap gE :action GotoPreviousError<cr>
 
 
 nnoremap <c-z> :action ToggleDistractionFreeMode<CR>
-nnoremap <c-x> :action HideAllWindows<CR>
+nnoremap <c-c> :action HideAllWindows<CR>
 nnoremap <c-t> :action ActivateTerminalToolWindow<CR>
 
 nnoremap <c-\> :action SplitVertically<CR>
