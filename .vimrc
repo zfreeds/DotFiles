@@ -93,6 +93,7 @@ nnoremap <silent> <expr> <C-n> g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : buf
 	"
 
 syntax on
+set hidden
 set nocompatible
 set number
 set relativenumber
