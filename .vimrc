@@ -14,29 +14,30 @@ endif
 
 call plug#begin('~/.vim/plugged')
 " Put plugins here
-Plug 'tpope/vim-sensible'
+
+Plug 'PeterRincker/vim-argumentative'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'doums/darcula'
 Plug 'inkarkat/vim-ReplaceWithRegister'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 Plug 'machakann/vim-highlightedyank' " Briefly highlight which text was yanked.
 Plug 'mattn/emmet-vim'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'morhetz/gruvbox'
+Plug 'nelstrom/vim-visual-star-search' " * searches for visually selected pattern
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
-Plug 'vim-scripts/argtextobj.vim'
-Plug 'vimwiki/vimwiki'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
+Plug 'tommcdo/vim-exchange'
 Plug 'tpope/vim-abolish' "Mostly used for changing case
-Plug 'tpope/vim-repeat' " dot works as expected on plugins
 Plug 'tpope/vim-fugitive' "Git
-" * searches for visually selected pattern
-Plug 'nelstrom/vim-visual-star-search'
-
+Plug 'tpope/vim-repeat' " dot works as expected on plugins
+Plug 'tpope/vim-sensible'
+Plug 'vimwiki/vimwiki'
+Plug 'wellle/targets.vim'
 call plug#end()
 
 """""""""" Color scheme """"""""""
@@ -128,6 +129,8 @@ set wildmenu "Display all matching files when we tab complete
 set mouse=a
 set cursorline
 set wildmode=longest,list,full
+" Direction splits happen in
+set splitbelow
 set splitright
 
 set scrolloff=3 " Display at least 3 lines around you cursor
@@ -144,6 +147,9 @@ nmap <leader>d <C-d>
 nmap <leader>u <C-u>
 vmap <leader>d <C-d>
 vmap <leader>u <C-u>
+
+" Duplicate line
+nmap yp "dyy"dp
 
 " nmap <Leader>o :call GotoJump()<CR>
 nnoremap <C-p> :FZF<CR>
