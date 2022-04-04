@@ -20,10 +20,11 @@ nnoremap ]] :action MethodDown<CR>
 
 
 " Extensions
-Plug 'preservim/nerdtree`
+Plug 'preservim/nerdtree'
 set NERDTree
 set surround
 set highlightedyank
+Plug 'tpope/vim-commentary'
 
 
 CocDisable
@@ -33,7 +34,7 @@ CocDisable
 " KEYMAP
 
 " Overriding Values
-"nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
 
 " Menus
 nnoremap <leader>m :action ActivateProjectToolWindow<CR>
@@ -50,6 +51,9 @@ vmap <leader>ri :action Inline<CR>
 
 nnoremap <leader>rv :action IntroduceVariable<CR>
 vmap <leader>rv :action IntroduceVariable<CR>
+
+nnoremap <leader>rc :action IntroduceConstant<CR>
+vmap <leader>rc :action IntroduceConstant<CR>
 
 vmap <leader>rp :action IntroduceParameter<CR>
 nnoremap <leader>rp :action IntroduceParameter<CR>
