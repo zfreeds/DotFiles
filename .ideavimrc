@@ -89,8 +89,8 @@ nnoremap <leader>tf :action RerunFailedTests<CR>
 
 " Jumping
 " built-in navigation to navigated items works better
-nnoremap <c-o> :action Back<cr>
-nnoremap <c-i> :action Forward<cr>
+" nnoremap <c-o> :action Back<cr>
+" nnoremap <c-i> :action Forward<cr>
 
 " Errors
 nnoremap ge :action GotoNextError<cr>
