@@ -35,6 +35,7 @@ Plug 'tommcdo/vim-exchange'
 Plug 'tpope/vim-abolish' "Mostly used for changing case
 Plug 'tpope/vim-fugitive' "Git
 Plug 'tpope/vim-repeat' " dot works as expected on plugins
+Plug 'tpope/vim-surround' " dot works as expected on plugins
 Plug 'tpope/vim-sensible'
 Plug 'vimwiki/vimwiki'
 Plug 'wellle/targets.vim'
