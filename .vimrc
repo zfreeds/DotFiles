@@ -107,7 +107,7 @@ set autoindent
 set smartindent
 set breakindent
 
-set clipboard=unnamed
+set clipboard^=unnamed,unnamedplus
 set wrap linebreak
 set ignorecase
 set smartcase
