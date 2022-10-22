@@ -3,24 +3,41 @@
       relink: true
 
 - clean: ['~']
+- create: 
+  - ~/.vim/swap
 
 - link:
-    ~/.vimrc: .vimrc
     ~/.ideavimrc: .ideavimrc
     ~/.zshrc: zshrc
-    ~/.zshrc-configs/: 
-      glob: true
-      create: true
-      ignore-missing: true
-      path: zshrc-configs/*
-      exclude: [ zshrc-configs/linux ]
+    #    ~/.zshrc-configs/: 
+    #      glob: true
+    #      create: true
+    #      ignore-missing: true
+    #      path: zshrc-configs/*
+    #      exclude: [ zshrc-configs/linux ]
+    ~/.vimrc: .vimrc
+    ~/.vim/config/: 
+        glob: true
+        create: true
+        ignore-missing: true
+        path: vim-config/*
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
+    - [git submodule update --init --recursive, Installing submodules]
 
-# If you ever want a bunch of linux only, see: https://github.com/anishathalye/dotbot/issues/57
+    # TODO install zsh - requires os specific
+
+    # All below is linux only
+    # https://github.com/anishathalye/dotbot/issues/57
+- defaults:
+    link:
+      if: '[[ "$(uname)" == "Linux" ]]'
+
 - link:
     ~/.zshrc-configs/linux: 
       path:  zshrc-configs/linux
       create: true
-      if: '[[ "$(uname)" == "Linux" ]]'
+# This one requires running with sudo sadly
+    /usr/local/bin/change-wallpaper:
+      path: scripts/linux/change-wallpaper
+      glob: true
