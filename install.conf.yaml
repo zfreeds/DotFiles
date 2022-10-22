@@ -1,0 +1,26 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.vimrc: .vimrc
+    ~/.ideavimrc: .ideavimrc
+    ~/.zshrc: zshrc
+    ~/.zshrc-configs/: 
+      glob: true
+      create: true
+      ignore-missing: true
+      path: zshrc-configs/*
+      exclude: [ zshrc-configs/linux ]
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+
+# If you ever want a bunch of linux only, see: https://github.com/anishathalye/dotbot/issues/57
+- link:
+    ~/.zshrc-configs/linux: 
+      path:  zshrc-configs/linux
+      create: true
+      if: '[[ "$(uname)" == "Linux" ]]'
