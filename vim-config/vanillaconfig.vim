@@ -40,6 +40,11 @@ set scrolloff=3 " Display at least 3 lines around you cursor
 set visualbell
 set noerrorbells
 
+set undofile
+set undodir=$HOME/.vim/undo
+set undolevels=1000
+set undoreload=10000
+
 augroup centering | au!
 	" Center when entering insert mode
 	autocmd InsertEnter * norm zz

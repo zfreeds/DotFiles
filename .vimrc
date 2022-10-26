@@ -68,7 +68,8 @@ nnoremap <leader>cd :cd %:p:h<CR>
 
 " FZF
 nnoremap <silent> <Leader>p :GFiles<CR>
-nnoremap <silent> <Leader>P  :Files %:h<CR>
+"nnoremap <silent> <Leader>P  :Files %:h<CR>
+nnoremap <silent> <Leader>P  :Files<CR>
 nnoremap <silent> <Leader>/ :Rg<CR>
 nnoremap <silent> <Leader>b :Buffers<CR>
 nnoremap <silent> <Leader>' :Marks<CR>

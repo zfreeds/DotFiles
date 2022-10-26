@@ -5,6 +5,7 @@
 - clean: ['~']
 - create: 
   - ~/.vim/swap
+  - ~/.vim/undo
 
 - link:
     ~/.ideavimrc: .ideavimrc
