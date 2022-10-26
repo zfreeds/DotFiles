@@ -63,8 +63,21 @@ nnoremap N Nzzzv
 " vim surround, use gs instead of ys
 nmap gs ys
 
+" Set current directory
+nnoremap <leader>cd :cd %:p:h<CR>
+
 " FZF
-nnoremap <C-p> :FZF<CR>
+nnoremap <silent> <Leader>p :GFiles<CR>
+nnoremap <silent> <Leader>P  :Files %:h<CR>
+nnoremap <silent> <Leader>/ :Rg<CR>
+nnoremap <silent> <Leader>b :Buffers<CR>
+nnoremap <silent> <Leader>' :Marks<CR>
+nnoremap <silent> <Leader>g :Commits<CR>
+nnoremap <silent> <Leader>H :Helptags<CR>
+nnoremap <silent> <Leader>hh :History<CR>
+
+"nnoremap <silent> <Leader>/ :BLines<CR>
+
 
 " Nerd Tree
 nnoremap <leader>n :NERDTreeFocus<CR>

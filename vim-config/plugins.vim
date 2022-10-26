@@ -1,15 +1,22 @@
 """""""""" Plugins  """"""""""
-" Vim-plug
-let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
-if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+let is_vim = !has('nvim')
+let is_nvim = has('nvim')
+if is_nvim
+    let $BASE = stdpath('config')
+else
+    let $BASE = '$HOME/.vim'
 endif
 
+" Lazy loading
+" From https://github.com/junegunn/vim-plug/wiki/faq#conditional-activation
+function! Cond(cond, ...)
+  let opts = get(a:000, 0, {})
+  return a:cond ? opts : extend(opts, { 'on': [], 'for': [] })
+endfunction
 
-call plug#begin('~/.vim/plugged')
+
+call plug#begin($BASE.'/plugged')
 " Put plugins here
-
 Plug 'PeterRincker/vim-argumentative'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
@@ -34,4 +41,8 @@ Plug 'tpope/vim-surround' " dot works as expected on plugins
 Plug 'tpope/vim-sensible'
 Plug 'vimwiki/vimwiki'
 Plug 'wellle/targets.vim'
+
+Plug 'akinsho/toggleterm.nvim', Cond(is_nvim)
 call plug#end()
+
+set grepprg=rg\ --vimgrep\ --smart-case\ --follow
