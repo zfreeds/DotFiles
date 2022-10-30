@@ -27,13 +27,13 @@ set autoindent
 set smartindent
 set breakindent
 
-
 set nohlsearch
 set path+=** "Search can now look in subfolders
 set wildmenu "Display all matching files when we tab complete
 :set iskeyword+=\- "Autcomplete completes hyphenated words
 set mouse=a
 set cursorline
+:hi CursorLine guifg=None
 set wildmode=longest,list,full
 " Direction splits happen in
 set splitbelow

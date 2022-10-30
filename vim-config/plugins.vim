@@ -45,6 +45,7 @@ Plug 'airblade/vim-rooter'
 Plug 'akinsho/toggleterm.nvim', Cond(is_nvim)
 Plug 'iamcco/markdown-preview.nvim', Cond(is_nvim, { 'do': 'cd app && yarn install' })
 Plug 'lukas-reineke/indent-blankline.nvim', Cond(is_nvim)
+Plug 'windwp/nvim-autopairs', Cond(is_nvim)
 
 " cmp
 Plug 'neovim/nvim-lspconfig', Cond(is_nvim)
@@ -63,6 +64,9 @@ Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'neovim/nvim-lspconfig', Cond(is_nvim) " enable LSP
 Plug 'williamboman/mason.nvim', Cond(is_nvim) " simple to use language server installer
 Plug 'williamboman/mason-lspconfig.nvim', Cond(is_nvim) " simple to use language server installer
+
+" Treesitter
+Plug 'nvim-treesitter/nvim-treesitter', Cond(is_nvim, {'do': ':TSUpdate'})
 
 " Telescope
 Plug 'nvim-lua/plenary.nvim', Cond(is_nvim)
