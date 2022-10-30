@@ -4,12 +4,10 @@ set nocompatible
 set number
 set relativenumber
 set laststatus=2 " always show bottom bar
+set autoread
+set termguicolors
 
 set directory^=$HOME/.vim/swap// " Set swp file location if exists. 
-
-set autoindent
-set smartindent
-set breakindent
 
 set clipboard^=unnamed,unnamedplus
 set wrap linebreak
@@ -23,9 +21,14 @@ set spell
 hi clear SpellBad
 hi SpellBad cterm=underline
 
-set tabstop=4
+set tabstop=4 softtabstop=4
 set shiftwidth=4
+set autoindent
+set smartindent
+set breakindent
 
+
+set nohlsearch
 set path+=** "Search can now look in subfolders
 set wildmenu "Display all matching files when we tab complete
 :set iskeyword+=\- "Autcomplete completes hyphenated words

@@ -20,7 +20,18 @@ nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
 nnoremap <C-h> <C-w><C-h>
 
+nnoremap <C-Up> :resize +2<CR>
+nnoremap <C-Down> :resize -2<CR>
+nnoremap <C-Right> :vertical resize +2<CR>
+nnoremap <C-Left> :vertical resize -2<CR>
+
+" Buffers
+nnoremap gb :bn<CR>
+nnoremap gB :bp<CR>
+
 """"" Helpful add-ons
+nnoremap L :bn<CR>
+nnoremap H :bp<CR>
 
 " Duplicate line
 nmap yp "dyy"dp
@@ -76,7 +87,6 @@ nnoremap <silent> <Leader>' :Marks<CR>
 nnoremap <silent> <Leader>g :Commits<CR>
 nnoremap <silent> <Leader>H :Helptags<CR>
 nnoremap <silent> <Leader>hh :History<CR>
-
 "nnoremap <silent> <Leader>/ :BLines<CR>
 
 

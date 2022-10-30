@@ -42,7 +42,27 @@ Plug 'tpope/vim-sensible'
 Plug 'vimwiki/vimwiki'
 Plug 'wellle/targets.vim'
 
+" NEOVIM ONLY
 Plug 'akinsho/toggleterm.nvim', Cond(is_nvim)
+Plug 'iamcco/markdown-preview.nvim', Cond(is_nvim, { 'do': 'cd app && yarn install' })
+
+" cmp
+Plug 'neovim/nvim-lspconfig', Cond(is_nvim)
+Plug 'hrsh7th/cmp-nvim-lsp', Cond(is_nvim)
+Plug 'hrsh7th/cmp-buffer', Cond(is_nvim)
+Plug 'hrsh7th/cmp-path', Cond(is_nvim)
+Plug 'hrsh7th/cmp-cmdline', Cond(is_nvim)
+Plug 'hrsh7th/nvim-cmp', Cond(is_nvim)
+Plug 'hrsh7th/cmp-nvim-lua'
+	" For luasnip users.
+	 Plug 'L3MON4D3/LuaSnip', Cond(is_nvim)
+	 Plug 'saadparwaiz1/cmp_luasnip', Cond(is_nvim)
+	 Plug 'rafamadriz/friendly-snippets', Cond(is_nvim)
+
+"  LSP
+Plug 'neovim/nvim-lspconfig', Cond(is_nvim) " enable LSP
+Plug 'williamboman/mason.nvim', Cond(is_nvim) " simple to use language server installer
+Plug 'williamboman/mason-lspconfig.nvim', Cond(is_nvim) " simple to use language server installer
 call plug#end()
 
 set grepprg=rg\ --vimgrep\ --smart-case\ --follow
