@@ -78,7 +78,7 @@ nmap gs ys
 nnoremap <leader>cd :cd %:p:h<CR>
 
 " Find files using Telescope command-line sugar.
-nnoremap <leader>p <cmd>Telescope find_files<cr>
+nnoremap <leader>p <cmd>Telescope find_files hidden=true<cr>
 nnoremap <leader>/ <cmd>Telescope live_grep<cr>
 nnoremap <leader>b <cmd>Telescope buffers<cr>
 nnoremap <leader>' <cmd>Telescope marks<cr>

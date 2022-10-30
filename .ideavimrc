@@ -11,8 +11,8 @@ set idearefactormode=keep
 set ReplaceWithRegister
 
 " TODO make sure we do this in normal vim too
-nmap <leader>h :action PreviousTab<CR>
-nmap <leader>l :action NextTab<CR>
+nmap <C-h> :action PreviousTab<CR>
+nmap <C-l> :action NextTab<CR>
 nmap <leader>bd :action CloseEditor<CR>
 
 nnoremap [[ :action MethodUp<CR>
