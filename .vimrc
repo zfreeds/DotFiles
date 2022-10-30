@@ -77,18 +77,13 @@ nmap gs ys
 " Set current directory
 nnoremap <leader>cd :cd %:p:h<CR>
 
-" FZF
-nnoremap <silent> <Leader>p :GFiles<CR>
-"nnoremap <silent> <Leader>P  :Files %:h<CR>
-nnoremap <silent> <Leader>P  :Files<CR>
-nnoremap <silent> <Leader>/ :Rg<CR>
-nnoremap <silent> <Leader>b :Buffers<CR>
-nnoremap <silent> <Leader>' :Marks<CR>
-nnoremap <silent> <Leader>g :Commits<CR>
-nnoremap <silent> <Leader>H :Helptags<CR>
-nnoremap <silent> <Leader>hh :History<CR>
-"nnoremap <silent> <Leader>/ :BLines<CR>
-
+" Find files using Telescope command-line sugar.
+nnoremap <leader>p <cmd>Telescope find_files<cr>
+nnoremap <leader>/ <cmd>Telescope live_grep<cr>
+nnoremap <leader>b <cmd>Telescope buffers<cr>
+nnoremap <leader>' <cmd>Telescope marks<cr>
+nnoremap <leader>g <cmd>Telescope git_commits<cr>
+nnoremap <leader>h <cmd>Telescope oldfiles<cr>
 
 " Nerd Tree
 nnoremap <leader>n :NERDTreeFocus<CR>

@@ -22,8 +22,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'doums/darcula'
 Plug 'inkarkat/vim-ReplaceWithRegister'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'machakann/vim-highlightedyank' " Briefly highlight which text was yanked.
@@ -41,10 +39,12 @@ Plug 'tpope/vim-surround' " dot works as expected on plugins
 Plug 'tpope/vim-sensible'
 Plug 'vimwiki/vimwiki'
 Plug 'wellle/targets.vim'
+Plug 'airblade/vim-rooter'
 
 " NEOVIM ONLY
 Plug 'akinsho/toggleterm.nvim', Cond(is_nvim)
 Plug 'iamcco/markdown-preview.nvim', Cond(is_nvim, { 'do': 'cd app && yarn install' })
+Plug 'lukas-reineke/indent-blankline.nvim', Cond(is_nvim)
 
 " cmp
 Plug 'neovim/nvim-lspconfig', Cond(is_nvim)
@@ -63,6 +63,10 @@ Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'neovim/nvim-lspconfig', Cond(is_nvim) " enable LSP
 Plug 'williamboman/mason.nvim', Cond(is_nvim) " simple to use language server installer
 Plug 'williamboman/mason-lspconfig.nvim', Cond(is_nvim) " simple to use language server installer
+
+" Telescope
+Plug 'nvim-lua/plenary.nvim', Cond(is_nvim)
+Plug 'nvim-telescope/telescope.nvim', Cond(is_nvim, { 'tag': '0.1.0' })
 call plug#end()
 
 set grepprg=rg\ --vimgrep\ --smart-case\ --follow
