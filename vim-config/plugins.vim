@@ -40,12 +40,20 @@ Plug 'tpope/vim-sensible'
 Plug 'vimwiki/vimwiki'
 Plug 'wellle/targets.vim'
 Plug 'airblade/vim-rooter'
+Plug 'RRethy/vim-illuminate'
+Plug 'moll/vim-bbye'
 
 " NEOVIM ONLY
 Plug 'akinsho/toggleterm.nvim', Cond(is_nvim)
 Plug 'iamcco/markdown-preview.nvim', Cond(is_nvim, { 'do': 'cd app && yarn install' })
 Plug 'lukas-reineke/indent-blankline.nvim', Cond(is_nvim)
 Plug 'windwp/nvim-autopairs', Cond(is_nvim)
+Plug 'numToStr/Comment.nvim', Cond(is_nvim)
+	Plug'JoosepAlviste/nvim-ts-context-commentstring', Cond(is_nvim)
+Plug 'kyazdani42/nvim-web-devicons', Cond(is_nvim)
+	Plug 'nvim-lualine/lualine.nvim', Cond(is_nvim)
+	Plug 'akinsho/bufferline.nvim', Cond(is_nvim)
+Plug 'folke/which-key.nvim', Cond(is_nvim)
 
 " cmp
 Plug 'neovim/nvim-lspconfig', Cond(is_nvim)
@@ -59,9 +67,7 @@ Plug 'hrsh7th/cmp-nvim-lua'
 	 Plug 'L3MON4D3/LuaSnip', Cond(is_nvim)
 	 Plug 'saadparwaiz1/cmp_luasnip', Cond(is_nvim)
 	 Plug 'rafamadriz/friendly-snippets', Cond(is_nvim)
-
 "  LSP
-Plug 'neovim/nvim-lspconfig', Cond(is_nvim) " enable LSP
 Plug 'williamboman/mason.nvim', Cond(is_nvim) " simple to use language server installer
 Plug 'williamboman/mason-lspconfig.nvim', Cond(is_nvim) " simple to use language server installer
 

@@ -11,9 +11,11 @@ set idearefactormode=keep
 set ReplaceWithRegister
 
 " TODO make sure we do this in normal vim too
-nmap <C-h> :action PreviousTab<CR>
-nmap <C-l> :action NextTab<CR>
-nmap <leader>bd :action CloseEditor<CR>
+nmap H :action PreviousTab<CR>
+nmap L :action NextTab<CR>
+nnoremap <TAB> :action NextTab<CR>
+nnoremap <s-TAB> :action PreviousTab<CR>
+nmap <leader>x :action CloseEditor<CR>
 
 nnoremap [[ :action MethodUp<CR>
 nnoremap ]] :action MethodDown<CR>
@@ -35,9 +37,6 @@ CocDisable
 
 " Overriding Values
 nnoremap <C-n> :NERDTreeToggle<CR>
-
-" Menus
-nnoremap <leader>m :action ActivateProjectToolWindow<CR>
 
 " Refactorings
 nnoremap <leader>rn :action RenameElement<CR>
@@ -73,13 +72,12 @@ vmap <leader>rr :action Refactorings.QuickListPopupAction<CR>
 
 " GoTo
 nnoremap gd :action GotoDeclaration<CR>
-nnoremap gi :action GotoImplementation<CR>
+nnoremap gI :action GotoImplementation<CR>
 nnoremap gp :action GoToSuperMethod<CR>
 nnoremap <leader>gt :action GotoTest<CR>
 " Look into findUsages vs showUsages
 nnoremap <leader>gu :action FindUsages<CR>
 " Show definition
-nnoremap <leader>sd :action QuickImplementations<CR>
 nnoremap <leader>gc :action VcsShowNextChangeMarker<cr>
 nnoremap <leader>gC :action VcsShowPrevChangeMarker<cr>
 
@@ -106,8 +104,6 @@ nnoremap <c--> :action SplitHorizontally<CR>
 nnoremap <c-=> :action Unsplit<CR>
 nnoremap <c-m> :action MoveEditorToOppositeTabGroup<CR>
 
-nnoremap <TAB> :action NextTab<CR>
-nnoremap <s-TAB> :action PreviousTab<CR>
 
 nnoremap <leader>l :action RecentLocations<CR>
 nnoremap <c-/> :action FindInPath<CR>

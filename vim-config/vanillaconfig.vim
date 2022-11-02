@@ -6,6 +6,7 @@ set relativenumber
 set laststatus=2 " always show bottom bar
 set autoread
 set termguicolors
+set timeoutlen=1000
 
 set directory^=$HOME/.vim/swap// " Set swp file location if exists. 
 
