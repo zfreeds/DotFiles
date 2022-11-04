@@ -5,7 +5,9 @@ set number
 set relativenumber
 set laststatus=2 " always show bottom bar
 set autoread
-set termguicolors
+" Todo: Figure out how to know when to do these two
+"set termguicolors
+":hi CursorLine guifg=None
 set timeoutlen=1000
 
 set directory^=$HOME/.vim/swap// " Set swp file location if exists. 
@@ -34,7 +36,6 @@ set wildmenu "Display all matching files when we tab complete
 :set iskeyword+=\- "Autcomplete completes hyphenated words
 set mouse=a
 set cursorline
-:hi CursorLine guifg=None
 set wildmode=longest,list,full
 " Direction splits happen in
 set splitbelow

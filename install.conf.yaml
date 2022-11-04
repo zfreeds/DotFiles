@@ -27,6 +27,7 @@
     ~/.config/nvim/lua/user/:
         glob: true
         path: ./nvim-config/*
+        create: true
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
