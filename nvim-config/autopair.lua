@@ -1,7 +1,7 @@
 local status_ok, npairs = pcall(require, "nvim-autopairs")
 if not status_ok then
-	 print("failed")
-	 return
+	print("Couldn't load: nvim-autopairs")
+	return
 end
 
 npairs.setup {

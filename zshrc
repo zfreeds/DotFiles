@@ -102,7 +102,6 @@ source $ZSH/oh-my-zsh.sh
 alias vim="nvim"
 source ~/.zshrc-configs/*
 
-
 if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files --hidden'
   export FZF_DEFAULT_OPTS='-m --height 50% --border'

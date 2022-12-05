@@ -54,6 +54,8 @@ Plug 'kyazdani42/nvim-web-devicons', Cond(is_nvim)
 	Plug 'nvim-lualine/lualine.nvim', Cond(is_nvim)
 	Plug 'akinsho/bufferline.nvim', Cond(is_nvim)
 Plug 'folke/which-key.nvim', Cond(is_nvim)
+Plug 'ThePrimeagen/refactoring.nvim', Cond(is_nvim)
+Plug 'goolord/alpha-nvim', Cond(is_nvim)
 
 " cmp
 Plug 'neovim/nvim-lspconfig', Cond(is_nvim)
@@ -70,6 +72,7 @@ Plug 'hrsh7th/cmp-nvim-lua'
 "  LSP
 Plug 'williamboman/mason.nvim', Cond(is_nvim) " simple to use language server installer
 Plug 'williamboman/mason-lspconfig.nvim', Cond(is_nvim) " simple to use language server installer
+	Plug 'jose-elias-alvarez/null-ls.nvim', Cond(is_nvim)
 
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', Cond(is_nvim, {'do': ':TSUpdate'})
@@ -77,6 +80,7 @@ Plug 'nvim-treesitter/nvim-treesitter', Cond(is_nvim, {'do': ':TSUpdate'})
 " Telescope
 Plug 'nvim-lua/plenary.nvim', Cond(is_nvim)
 Plug 'nvim-telescope/telescope.nvim', Cond(is_nvim, { 'tag': '0.1.0' })
+Plug 'elihunter173/dirbuf.nvim', Cond(is_nvim)
 call plug#end()
 
 set grepprg=rg\ --vimgrep\ --smart-case\ --follow

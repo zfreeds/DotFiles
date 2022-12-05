@@ -1,6 +1,7 @@
 local status_ok, telescope = pcall(require, "telescope")
 if not status_ok then
-  return
+	print("Couldn't load: telescope")
+	return
 end
 
 require('telescope').setup{

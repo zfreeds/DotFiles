@@ -64,13 +64,13 @@ vmap <leader>d d~h
 """" Plugin bindings
 "" LSP
 " Refactorings
-nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<cr>
-vnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<cr>
+"nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<cr>
+"vnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<cr>
 
 "nnoremap <leader>rs :action ChangeSignature<CR>
 "vmap <leader>rs :action ChangeSignature<CR>
 "
-"nnoremap <leader>ri :action Inline<CR>
+"nnoremap <leader>ri :lua InlineVar()
 "vmap <leader>ri :action Inline<CR>
 "
 "nnoremap <leader>rv :action IntroduceVariable<CR>
@@ -88,14 +88,14 @@ vnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<cr>
 "nnoremap <leader>rm :action ExtractMethod<CR>
 "vmap <leader>rm :action ExtractMethod<CR>
 
-nnoremap <leader>rr <cmd>lua vim.lsp.buf.code_action()<CR>
+"nnoremap <leader>rr <cmd>lua vim.lsp.buf.code_action()<CR>
 vnoremap <leader>rr <cmd>lua vim.lsp.buf.code_action()<CR>
 
-" TODO consider if worth keeping
 nnoremap K <cmd>lua vim.lsp.buf.hover()<CR>
 
 " Formatting - todo consider better 
-nnoremap <leader>lf<cmd>lua vim.lsp.buf.format{ async = true }<cr> 
+nnoremap <leader>lf <cmd>lua vim.lsp.buf.format{ async = true }<cr> 
+"vnoremap <leader>lf <cmd>lua vim.lsp.buf.format{ async = true }<cr> 
 
 " GoTo
 nnoremap gd <cmd>lua vim.lsp.buf.definition()<CR>
