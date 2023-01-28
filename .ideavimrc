@@ -6,6 +6,7 @@ source ~/.vimrc
 
 set ideajoin " enable join via the IDE
 set ideaput " clipboard
+set clipboard=unnamed
 set ideamarks " sync bookmarks with idea
 set idearefactormode=keep
 set ReplaceWithRegister
