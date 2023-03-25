@@ -37,7 +37,6 @@ Plug 'tpope/vim-fugitive' "Git
 Plug 'tpope/vim-repeat' " dot works as expected on plugins
 Plug 'tpope/vim-surround' " dot works as expected on plugins
 Plug 'tpope/vim-sensible'
-Plug 'vimwiki/vimwiki'
 Plug 'wellle/targets.vim'
 Plug 'airblade/vim-rooter'
 Plug 'RRethy/vim-illuminate'
@@ -56,6 +55,7 @@ Plug 'kyazdani42/nvim-web-devicons', Cond(is_nvim)
 Plug 'folke/which-key.nvim', Cond(is_nvim)
 Plug 'ThePrimeagen/refactoring.nvim', Cond(is_nvim)
 Plug 'goolord/alpha-nvim', Cond(is_nvim)
+Plug 'epwalsh/obsidian.nvim', Cond(is_nvim)
 
 " cmp
 Plug 'neovim/nvim-lspconfig', Cond(is_nvim)
