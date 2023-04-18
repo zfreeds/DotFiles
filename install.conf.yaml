@@ -9,7 +9,6 @@
 
 - link:
     ~/.ideavimrc: .ideavimrc
-    ~/.zshrc: zshrc
     ~/.zshrc-configs/: 
       glob: true
       create: true
