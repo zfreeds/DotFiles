@@ -12,7 +12,11 @@ let g:mkdp_auto_close = 1
 " valid: `/path/with\ space/xxx`
 " invalid: `/path/with\\ space/xxx`
 " default: ''
-let g:mkdp_browser = ''
+" let g:mkdp_browser = ''
+function OpenMarkdownPreview (url)
+	execute "silent ! google-chrome --new-window " . a:url
+endfunction
+let g:mkdp_browserfunc = 'OpenMarkdownPreview'
 
 " set to 1, echo preview page url in command line when open preview page
 " default is 0
@@ -70,3 +74,5 @@ let g:mkdp_filetypes = ['markdown']
 " By default the theme is define according to the preferences of the system
 let g:mkdp_theme = 'dark'
 
+
+:command Preview :MarkdownPreview

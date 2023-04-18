@@ -100,7 +100,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim="nvim"
-source ~/.zshrc-configs/*
+alias gpo="git push origin"
+
+for file in ~/.zshrc-configs/*; do
+    source "$file"
+done
 
 if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files --hidden'

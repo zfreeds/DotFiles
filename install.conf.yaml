@@ -9,13 +9,13 @@
 
 - link:
     ~/.ideavimrc: .ideavimrc
-    # ~/.zshrc: zshrc
-    #    ~/.zshrc-configs/: 
-    #      glob: true
-    #      create: true
-    #      ignore-missing: true
-    #      path: zshrc-configs/*
-    #      exclude: [ zshrc-configs/linux ]
+    ~/.zshrc: zshrc
+    ~/.zshrc-configs/: 
+      glob: true
+      create: true
+      ignore-missing: true
+      path: zshrc-configs/*
+      exclude: [ zshrc-configs/linux ]
     ~/.vimrc: .vimrc
       # Note globs only work if you have 2+ files
     ~/.vim/config/: 
