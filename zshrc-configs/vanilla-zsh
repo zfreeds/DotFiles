@@ -107,7 +107,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Git configs
 git config --global column.ui auto
-git config --global branch.sort --comitterdate
+git config --global branch.sort committerdate
 git config --global diff.colorMoved zebra
 git config --global user.name "Zack Freedman"
 

@@ -1,2 +1,3 @@
-# Empty for now. Should eventually have things that must be downloaded
-# Since we use wildcards, we need 2+ items to link so I'm keeping this file
+# Wildcards need 2+ items to link
+alias tf=terraform
+alias gpofwl='git push origin --force-with-lease'
