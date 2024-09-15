@@ -4,7 +4,7 @@
 #	zsh
 #	oh-my-zsh
 #	spaceship theme
-#	plugins: git fzf you-should-use
+#	plugins: git fzf you-should-use aws
 #############
 
 
@@ -84,7 +84,7 @@ export UPDATE_ZSH_DAYS=7
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 export YSU_MESSAGE_POSITION="after"
-plugins=(git fzf you-should-use)
+plugins=(git fzf you-should-use aws)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -106,7 +106,7 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # Git configs
-git config --global column.ui auto
+git config --global branch.sort committerdate
 git config --global diff.colorMoved zebra
 git config --global user.name "Zack Freedman"
 
