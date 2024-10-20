@@ -9,6 +9,7 @@
 
 - link:
     ~/.ideavimrc: .ideavimrc
+    ~/.tmux.conf: .tmux.conf
     ~/.zshrc-configs/: 
       glob: true
       create: true
@@ -32,6 +33,9 @@
     - [git submodule update --init --recursive, Installing submodules]
     - [curl -fLo ~/.vim/autoload/plug.vim --create-dirs 
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim, Installing vim-plug]
+    - [brew install fzf rg the_silver_searcher, Installing search tools]
+    - [gem install ruby-lsp]
+# nvim --headless +PlugInstall +qall -- I forget if I install neovim currently but one day might want this after
 
     # TODO install zsh - requires os specific
 

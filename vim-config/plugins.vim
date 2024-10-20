@@ -26,7 +26,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'machakann/vim-highlightedyank' " Briefly highlight which text was yanked.
 Plug 'mattn/emmet-vim'
-Plug 'michaeljsmith/vim-indent-object'
+Plug 'michaeljsmith/vim-indent-object', { 'tag': '1.1.2'}
 Plug 'morhetz/gruvbox'
 Plug 'nelstrom/vim-visual-star-search' " * searches for visually selected pattern
 Plug 'preservim/nerdtree'
@@ -34,6 +34,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tommcdo/vim-exchange'
 Plug 'tpope/vim-abolish' "Mostly used for changing case
 Plug 'tpope/vim-fugitive' "Git
+Plug 'tpope/vim-rhubarb' " Allows visiting Github URLs
 Plug 'tpope/vim-repeat' " dot works as expected on plugins
 Plug 'tpope/vim-surround' " dot works as expected on plugins
 Plug 'tpope/vim-sensible'
@@ -41,23 +42,29 @@ Plug 'wellle/targets.vim'
 Plug 'airblade/vim-rooter'
 Plug 'RRethy/vim-illuminate'
 Plug 'moll/vim-bbye'
+Plug 'janko/vim-test'
+Plug 'tpope/vim-projectionist' " Jump to test file
+
 
 " NEOVIM ONLY
 Plug 'akinsho/toggleterm.nvim', Cond(is_nvim)
 Plug 'iamcco/markdown-preview.nvim', Cond(is_nvim, { 'do': 'cd app && yarn install' })
 Plug 'lukas-reineke/indent-blankline.nvim', Cond(is_nvim)
 Plug 'windwp/nvim-autopairs', Cond(is_nvim)
-Plug 'numToStr/Comment.nvim', Cond(is_nvim)
-	Plug'JoosepAlviste/nvim-ts-context-commentstring', Cond(is_nvim)
+Plug 'numToStr/Comment.nvim', Cond(is_nvim, {'commit':'97a188a98b5a3a6f9b1b850799ac078faa17ab67'})
+	Plug'JoosepAlviste/nvim-ts-context-commentstring', Cond(is_nvim, {'commit' : '4d3a68c41a53add8804f471fcc49bb398fe8de08' })
 Plug 'kyazdani42/nvim-web-devicons', Cond(is_nvim)
 	Plug 'nvim-lualine/lualine.nvim', Cond(is_nvim)
 	Plug 'akinsho/bufferline.nvim', Cond(is_nvim)
 Plug 'folke/which-key.nvim', Cond(is_nvim)
-Plug 'ThePrimeagen/refactoring.nvim', Cond(is_nvim)
-Plug 'goolord/alpha-nvim', Cond(is_nvim)
+" Plug 'goolord/alpha-nvim', Cond(is_nvim)
 Plug 'epwalsh/obsidian.nvim', Cond(is_nvim)
+Plug 'rmagatti/auto-session', Cond(is_nvim)
 
-" cmp
+" LSP Related
+Plug 'ThePrimeagen/refactoring.nvim', Cond(is_nvim)
+Plug 'nvim-lua/plenary.nvim', Cond(is_nvim)
+Plug 'VonHeikemen/lsp-zero.nvim', Cond(is_nvim, {'branch': 'v4.x'}) " Easier lsp config
 Plug 'neovim/nvim-lspconfig', Cond(is_nvim)
 Plug 'hrsh7th/cmp-nvim-lsp', Cond(is_nvim)
 Plug 'hrsh7th/cmp-buffer', Cond(is_nvim)
@@ -72,15 +79,28 @@ Plug 'hrsh7th/cmp-nvim-lua'
 "  LSP
 Plug 'williamboman/mason.nvim', Cond(is_nvim) " simple to use language server installer
 Plug 'williamboman/mason-lspconfig.nvim', Cond(is_nvim) " simple to use language server installer
-	Plug 'jose-elias-alvarez/null-ls.nvim', Cond(is_nvim)
+	" Plug 'jose-elias-alvarez/null-ls.nvim', Cond(is_nvim)
 
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', Cond(is_nvim, {'do': ':TSUpdate'})
 
-" Telescope
-Plug 'nvim-lua/plenary.nvim', Cond(is_nvim)
-Plug 'nvim-telescope/telescope.nvim', Cond(is_nvim, { 'tag': '0.1.0' })
+Plug 'junegunn/fzf', Cond(is_nvim, { 'do': { -> fzf#install() } })
+Plug 'ibhagwan/fzf-lua', Cond(is_nvim, {'branch': 'main'})
+Plug 'ojroques/nvim-lspfuzzy', Cond(is_nvim) "        -- LSP Results use FZF
+" optional for icon support
+Plug 'nvim-tree/nvim-web-devicons', Cond(is_nvim)
+
 Plug 'elihunter173/dirbuf.nvim', Cond(is_nvim)
+Plug 'tpope/vim-dispatch', Cond(is_nvim)    "  -- Run background processes in tmux tabs
+Plug 'christoomey/vim-tmux-navigator', Cond(is_nvim)
+
+" Ruby
+if executable('shadowenv') == 1
+	Plug 'Shopify/shadowenv.vim'
+endif
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-vundler'
+Plug 'noprompt/vim-yardoc'
 call plug#end()
 
 set grepprg=rg\ --vimgrep\ --smart-case\ --follow

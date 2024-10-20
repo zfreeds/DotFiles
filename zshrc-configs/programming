@@ -1,4 +1,19 @@
+eval "$(shadowenv init zsh)" 2> /dev/null
 # Wildcards need 2+ items to link
 alias tf=terraform
 alias gpofwl='git push origin --force-with-lease'
-alias mine=rubymine
+alias mine='rubymine > /dev/null @>&1 &'
+
+# Git configs
+git config --global branch.sort committerdate
+git config --global diff.colorMoved zebra
+git config --global user.name "Zack Freedman"
+
+# Aliases
+alias vim="nvim"
+alias gpo="git push origin"
+alias tf=terraform
+
+
+# Ruby
+export PATH="/usr/local/share/chruby:$PATH"

@@ -1,1 +1,2 @@
-let g:rooter_patterns = ['.git', 'Makefile', '*.sln', 'build/env.sh']
+let g:rooter_patterns = ['Gemfile', '.git', 'Makefile', '*.sln', 'build/env.sh']
+
