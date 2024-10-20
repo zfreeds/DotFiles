@@ -26,7 +26,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'machakann/vim-highlightedyank' " Briefly highlight which text was yanked.
 Plug 'mattn/emmet-vim'
-Plug 'michaeljsmith/vim-indent-object'
+Plug 'michaeljsmith/vim-indent-object', { 'tag': '1.1.2'}
 Plug 'morhetz/gruvbox'
 Plug 'nelstrom/vim-visual-star-search' " * searches for visually selected pattern
 Plug 'preservim/nerdtree'
@@ -47,8 +47,8 @@ Plug 'akinsho/toggleterm.nvim', Cond(is_nvim)
 Plug 'iamcco/markdown-preview.nvim', Cond(is_nvim, { 'do': 'cd app && yarn install' })
 Plug 'lukas-reineke/indent-blankline.nvim', Cond(is_nvim)
 Plug 'windwp/nvim-autopairs', Cond(is_nvim)
-Plug 'numToStr/Comment.nvim', Cond(is_nvim)
-	Plug'JoosepAlviste/nvim-ts-context-commentstring', Cond(is_nvim)
+Plug 'numToStr/Comment.nvim', Cond(is_nvim, {'commit':'97a188a98b5a3a6f9b1b850799ac078faa17ab67'})
+	Plug'JoosepAlviste/nvim-ts-context-commentstring', Cond(is_nvim, {'commit' : '4d3a68c41a53add8804f471fcc49bb398fe8de08' })
 Plug 'kyazdani42/nvim-web-devicons', Cond(is_nvim)
 	Plug 'nvim-lualine/lualine.nvim', Cond(is_nvim)
 	Plug 'akinsho/bufferline.nvim', Cond(is_nvim)
@@ -79,7 +79,7 @@ Plug 'nvim-treesitter/nvim-treesitter', Cond(is_nvim, {'do': ':TSUpdate'})
 
 " Telescope
 Plug 'nvim-lua/plenary.nvim', Cond(is_nvim)
-Plug 'nvim-telescope/telescope.nvim', Cond(is_nvim, { 'tag': '0.1.0' })
+Plug 'nvim-telescope/telescope.nvim', Cond(is_nvim, { 'tag': '0.1.8' })
 Plug 'elihunter173/dirbuf.nvim', Cond(is_nvim)
 call plug#end()
 
