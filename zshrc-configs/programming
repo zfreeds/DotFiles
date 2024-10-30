@@ -1,4 +1,4 @@
 # Wildcards need 2+ items to link
 alias tf=terraform
 alias gpofwl='git push origin --force-with-lease'
-alias mine=rubymine > /dev/null @>&1 &
+alias mine='rubymine > /dev/null @>&1 &'
