@@ -13,13 +13,8 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 
-# Set ZSH if it's not set
-if [ -z ${ZSH+x} ];
-	# Path to your oh-my-zsh installation.
-	then export ZSH="$HOME/.oh-my-zsh";
-else
-	echo "It's set"
-fi
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh";
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -92,7 +87,9 @@ export UPDATE_ZSH_DAYS=7
 export YSU_MESSAGE_POSITION="after"
 plugins=(git fzf you-should-use aws)
 
-source $ZSH/oh-my-zsh.sh
+if [ -z "$SPIN" ];
+	then source $ZSH/oh-my-zsh.sh
+fi
 
 # User configuration
 
