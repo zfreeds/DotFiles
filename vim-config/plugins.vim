@@ -34,6 +34,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tommcdo/vim-exchange'
 Plug 'tpope/vim-abolish' "Mostly used for changing case
 Plug 'tpope/vim-fugitive' "Git
+Plug 'tpope/vim-rhubarb' " Allows visiting Github URLs
 Plug 'tpope/vim-repeat' " dot works as expected on plugins
 Plug 'tpope/vim-surround' " dot works as expected on plugins
 Plug 'tpope/vim-sensible'

@@ -11,8 +11,10 @@ end
 wk.add({ "<leader>f", group = "Find" })
 map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", {desc = "Buffers"})
 
-map("n", "<leader>p", "<cmd>Telescope find_files hidden=true<cr>", {desc = "Find files"})
-map("n", "<C-p>", "<cmd>Telescope find_files hidden=true<cr>", {desc = "Find files"})
+-- map("n", "<leader>p", "<cmd>Telescope find_files hidden=true<cr>", {desc = "Find files"})
+-- map("n", "<C-p>", "<cmd>Telescope find_files hidden=true<cr>", {desc = "Find files"})
+map("n", "<leader>p", "<cmd>Telescope git_files<cr>", {desc = "Find files"})
+map("n", "<C-p>", "<cmd>Telescope git_files<cr>", {desc = "Find files"})
 map("n", "<leader>/", "<cmd>Telescope live_grep<cr>", {desc = "Live grep"})
 map("n", "<leader>:", "<cmd>Telescope commands<cr>", {desc = "Find helpful commands"})
 

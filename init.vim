@@ -14,5 +14,6 @@ lua require("user/telescope")
 lua require("user/toggleterm")
 lua require("user/treesitter")
 lua require("user/whichkey")
+lua require("user/keymaps")
 
 lua require("mason").setup()

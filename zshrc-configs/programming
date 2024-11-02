@@ -2,3 +2,13 @@
 alias tf=terraform
 alias gpofwl='git push origin --force-with-lease'
 alias mine='rubymine > /dev/null @>&1 &'
+
+# Git configs
+git config --global branch.sort committerdate
+git config --global diff.colorMoved zebra
+git config --global user.name "Zack Freedman"
+
+# Aliases
+alias vim="nvim"
+alias gpo="git push origin"
+alias tf=terraform

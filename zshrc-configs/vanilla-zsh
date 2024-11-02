@@ -15,6 +15,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh";
+export FZF_BASE=/opt/homebrew/bin/fzf
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -108,14 +109,5 @@ fi
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Git configs
-git config --global branch.sort committerdate
-git config --global diff.colorMoved zebra
-git config --global user.name "Zack Freedman"
-
-# Aliases
-alias vim="nvim"
-alias gpo="git push origin"
-alias tf=terraform
 
 
