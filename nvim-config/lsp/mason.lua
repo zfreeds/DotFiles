@@ -1,13 +1,13 @@
 local servers = {
-	"sumneko_lua",
+	"lua_ls",
 	"cssls",
 	"html",
-	"tsserver",
 	"pyright",
 	"bashls",
 	"jsonls",
 	"yamlls",
 }
+
 
 local settings = {
 	ui = {
@@ -28,20 +28,17 @@ require("mason-lspconfig").setup({
 	automatic_installation = true,
 })
 
+
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then
 	vim.notify("Failed lspconfig")
 	return
 end
 
+
 local opts = {}
 
 for _, server in pairs(servers) do
-	opts = {
-		on_attach = require("user.lsp.handlers").on_attach,
-		capabilities = require("user.lsp.handlers").capabilities,
-	}
-
 	server = vim.split(server, "@")[1]
 
 	local require_ok, conf_opts = pcall(require, "user.lsp.settings." .. server)
@@ -51,3 +48,5 @@ for _, server in pairs(servers) do
 
 	lspconfig[server].setup(opts)
 end
+
+

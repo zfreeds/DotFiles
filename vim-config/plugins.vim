@@ -58,7 +58,8 @@ Plug 'ThePrimeagen/refactoring.nvim', Cond(is_nvim)
 Plug 'goolord/alpha-nvim', Cond(is_nvim)
 Plug 'epwalsh/obsidian.nvim', Cond(is_nvim)
 
-" cmp
+" LSP Related
+Plug 'VonHeikemen/lsp-zero.nvim', Cond(is_nvim, {'branch': 'v4.x'}) " Easier lsp config
 Plug 'neovim/nvim-lspconfig', Cond(is_nvim)
 Plug 'hrsh7th/cmp-nvim-lsp', Cond(is_nvim)
 Plug 'hrsh7th/cmp-buffer', Cond(is_nvim)
@@ -73,7 +74,7 @@ Plug 'hrsh7th/cmp-nvim-lua'
 "  LSP
 Plug 'williamboman/mason.nvim', Cond(is_nvim) " simple to use language server installer
 Plug 'williamboman/mason-lspconfig.nvim', Cond(is_nvim) " simple to use language server installer
-	Plug 'jose-elias-alvarez/null-ls.nvim', Cond(is_nvim)
+	" Plug 'jose-elias-alvarez/null-ls.nvim', Cond(is_nvim)
 
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', Cond(is_nvim, {'do': ':TSUpdate'})
