@@ -12,3 +12,7 @@ git config --global user.name "Zack Freedman"
 alias vim="nvim"
 alias gpo="git push origin"
 alias tf=terraform
+
+
+# Ruby
+export PATH="/usr/local/share/chruby:$PATH"
