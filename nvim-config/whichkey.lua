@@ -17,7 +17,7 @@ end
 -- map("n", "<C-p>", "<cmd>Telescope find_files hidden=true<cr>", {desc = "Find files"})
 map("n", "<leader>p", "<cmd>Telescope git_files<cr>", {desc = "Find files"})
 map("n", "<C-p>", "<cmd>Telescope git_files<cr>", {desc = "Find files"})
-map("n", "<leader>/", "<cmd>Telescope live_grep<cr>", {desc = "Live grep"})
+map("n", "<leader>/", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", {desc = "Live grep"})
 map("n", "<leader>:", "<cmd>Telescope commands<cr>", {desc = "Find helpful commands"})
 
 wk.register({

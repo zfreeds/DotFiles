@@ -82,6 +82,8 @@ Plug 'nvim-treesitter/nvim-treesitter', Cond(is_nvim, {'do': ':TSUpdate'})
 " Telescope
 Plug 'nvim-lua/plenary.nvim', Cond(is_nvim)
 Plug 'nvim-telescope/telescope.nvim', Cond(is_nvim, { 'tag': '0.1.8' })
+Plug 'nvim-telescope/telescope-live-grep-args.nvim', Cond(is_nvim)
+
 Plug 'elihunter173/dirbuf.nvim', Cond(is_nvim)
 call plug#end()
 
