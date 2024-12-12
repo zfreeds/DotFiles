@@ -24,6 +24,7 @@ wk.register({
     m = { "<cmd>FzfLua  marks<cr>", "Marks" },
     g = { "<cmd>FzfLua  git_commits<cr>", "Git Commits" },
     h = { "<cmd>FzfLua  oldfiles<cr>", "Recent Files" },
+    q = { "<cmd>FzfLua  quickfix<cr>", "Quickfix" },
     [":"] = { "<cmd>FzfLua  help_tags<cr>", "Vim Help Pages" },
   },
   f = { name = "Find",
@@ -37,11 +38,7 @@ wk.register({
 -- Fzf changes -- might be useful to look for lines I changed
 
 -- # GoTo
-map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", {})
-map("n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", {})
--- "nnoremap gp :action GoToSuperMethod<CR>
--- "nnoremap <leader>gt :action GotoTest<CR>
-map("n", "<leader>gu", "<cmd>lua vim.lsp.buf.references()<CR>", {})
+-- map("n", "<leader>gu", "<cmd>lua vim.lsp.buf.references()<CR>", {})
 -- ]c and [c also work
 map("n", "<leader>gC", ":GitGutterPrevHunk<cr>", {})
 map("n", "<leader>gc", ":GitGutterNextHunk<cr>", {})

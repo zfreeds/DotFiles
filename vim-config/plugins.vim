@@ -57,6 +57,7 @@ Plug 'folke/which-key.nvim', Cond(is_nvim)
 Plug 'ThePrimeagen/refactoring.nvim', Cond(is_nvim)
 Plug 'goolord/alpha-nvim', Cond(is_nvim)
 Plug 'epwalsh/obsidian.nvim', Cond(is_nvim)
+Plug 'rmagatti/auto-session', Cond(is_nvim)
 
 " LSP Related
 Plug 'VonHeikemen/lsp-zero.nvim', Cond(is_nvim, {'branch': 'v4.x'}) " Easier lsp config
@@ -79,9 +80,9 @@ Plug 'williamboman/mason-lspconfig.nvim', Cond(is_nvim) " simple to use language
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', Cond(is_nvim, {'do': ':TSUpdate'})
 
-" Vimplug
 Plug 'junegunn/fzf', Cond(is_nvim, { 'do': { -> fzf#install() } })
 Plug 'ibhagwan/fzf-lua', Cond(is_nvim, {'branch': 'main'})
+Plug 'ojroques/nvim-lspfuzzy', Cond(is_nvim) "        -- LSP Results use FZF
 " optional for icon support
 Plug 'nvim-tree/nvim-web-devicons', Cond(is_nvim)
 

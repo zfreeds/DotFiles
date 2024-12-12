@@ -9,6 +9,7 @@
 
 - link:
     ~/.ideavimrc: .ideavimrc
+    ~/.tmux.conf: .tmux.conf
     ~/.zshrc-configs/: 
       glob: true
       create: true

@@ -13,5 +13,6 @@ lua require("user/fzf")
 lua require("user/toggleterm")
 lua require("user/treesitter")
 lua require("user/whichkey")
+lua require("user/auto-session")
 
 lua require("mason").setup()
