@@ -79,10 +79,11 @@ Plug 'williamboman/mason-lspconfig.nvim', Cond(is_nvim) " simple to use language
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', Cond(is_nvim, {'do': ':TSUpdate'})
 
-" Telescope
-Plug 'nvim-lua/plenary.nvim', Cond(is_nvim)
-Plug 'nvim-telescope/telescope.nvim', Cond(is_nvim, { 'tag': '0.1.8' })
-Plug 'nvim-telescope/telescope-live-grep-args.nvim', Cond(is_nvim)
+" Vimplug
+Plug 'junegunn/fzf', Cond(is_nvim, { 'do': { -> fzf#install() } })
+Plug 'ibhagwan/fzf-lua', Cond(is_nvim, {'branch': 'main'})
+" optional for icon support
+Plug 'nvim-tree/nvim-web-devicons', Cond(is_nvim)
 
 Plug 'elihunter173/dirbuf.nvim', Cond(is_nvim)
 call plug#end()

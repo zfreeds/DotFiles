@@ -4,7 +4,6 @@ if not status_ok then
 	return
 end
 
-
 local map = function(modes, key, cmd, opts)
   opts = opts or { noremap = true, silent = true }
   vim.keymap.set(modes, key, cmd, opts)
@@ -15,26 +14,27 @@ end
 
 -- map("n", "<leader>p", "<cmd>Telescope find_files hidden=true<cr>", {desc = "Find files"})
 -- map("n", "<C-p>", "<cmd>Telescope find_files hidden=true<cr>", {desc = "Find files"})
-map("n", "<leader>p", "<cmd>Telescope git_files<cr>", {desc = "Find files"})
-map("n", "<C-p>", "<cmd>Telescope git_files<cr>", {desc = "Find files"})
-map("n", "<leader>/", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", {desc = "Live grep"})
-map("n", "<leader>:", "<cmd>Telescope commands<cr>", {desc = "Find helpful commands"})
+map("n", "<leader>p", "<cmd>FzfLua files<cr>", {desc = "Find files"})
+map("n", "<C-p>", "<cmd>FzfLua  files<cr>", {desc = "Find files"})
+map("n", "<leader>/", "<cmd>FzfLua live_grep<CR>", {desc = "Live grep"})
+map("n", "<leader>:", "<cmd>FzfLua  commands<cr>", {desc = "Find helpful commands"})
 
 wk.register({
   s = { name = "Search",
-    m = { "<cmd>Telescope marks<cr>", "Marks" },
-    g = { "<cmd>Telescope git_commits<cr>", "Git Commits" },
-    h = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },
-    [":"] = { "<cmd>Telescope help_tags<cr>", "Vim Help Pages" },
+    m = { "<cmd>FzfLua  marks<cr>", "Marks" },
+    g = { "<cmd>FzfLua  git_commits<cr>", "Git Commits" },
+    h = { "<cmd>FzfLua  oldfiles<cr>", "Recent Files" },
+    [":"] = { "<cmd>FzfLua  help_tags<cr>", "Vim Help Pages" },
   },
   f = { name = "Find",
-	b = { "<cmd>Telescope buffers<cr>", "Buffers" },
-    f = { "<cmd>Telescope git_files<cr>", "Find Files" },
+	b = { "<cmd>FzfLua buffers<cr>", "Buffers" },
+    f = { "<cmd>FzfLua files<cr>", "Find Files" },
   },
 }, { prefix = "<leader>" })
 
 
--- Telescope keymaps  -- might be helpful for finding common keymaps (e.g user defined)
+-- Fzf keymaps  -- might be helpful for finding common keymaps (e.g user defined)
+-- Fzf changes -- might be useful to look for lines I changed
 
 -- # GoTo
 map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", {})

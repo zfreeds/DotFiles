@@ -1,3 +1,4 @@
+eval "$(shadowenv init zsh)"
 # Wildcards need 2+ items to link
 alias tf=terraform
 alias gpofwl='git push origin --force-with-lease'
