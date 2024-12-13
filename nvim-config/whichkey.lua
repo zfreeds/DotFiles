@@ -4,6 +4,10 @@ if not status_ok then
 	return
 end
 
+wk.setup({
+	notify = false
+})
+
 local map = function(modes, key, cmd, opts)
   opts = opts or { noremap = true, silent = true }
   vim.keymap.set(modes, key, cmd, opts)

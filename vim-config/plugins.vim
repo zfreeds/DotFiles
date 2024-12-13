@@ -54,12 +54,13 @@ Plug 'kyazdani42/nvim-web-devicons', Cond(is_nvim)
 	Plug 'nvim-lualine/lualine.nvim', Cond(is_nvim)
 	Plug 'akinsho/bufferline.nvim', Cond(is_nvim)
 Plug 'folke/which-key.nvim', Cond(is_nvim)
-Plug 'ThePrimeagen/refactoring.nvim', Cond(is_nvim)
 Plug 'goolord/alpha-nvim', Cond(is_nvim)
 Plug 'epwalsh/obsidian.nvim', Cond(is_nvim)
 Plug 'rmagatti/auto-session', Cond(is_nvim)
 
 " LSP Related
+Plug 'ThePrimeagen/refactoring.nvim', Cond(is_nvim)
+Plug 'nvim-lua/plenary.nvim', Cond(is_nvim)
 Plug 'VonHeikemen/lsp-zero.nvim', Cond(is_nvim, {'branch': 'v4.x'}) " Easier lsp config
 Plug 'neovim/nvim-lspconfig', Cond(is_nvim)
 Plug 'hrsh7th/cmp-nvim-lsp', Cond(is_nvim)
@@ -87,6 +88,12 @@ Plug 'ojroques/nvim-lspfuzzy', Cond(is_nvim) "        -- LSP Results use FZF
 Plug 'nvim-tree/nvim-web-devicons', Cond(is_nvim)
 
 Plug 'elihunter173/dirbuf.nvim', Cond(is_nvim)
+Plug 'tpope/vim-dispatch', Cond(is_nvim)    "  -- Run background processes in tmux tabs
+Plug 'christoomey/vim-tmux-navigator', Cond(is_nvim)
+" if executable('shadowenv') == 1
+" 	Plug 'Shopify/shadowenv.vim'
+" endif
+
 call plug#end()
 
 set grepprg=rg\ --vimgrep\ --smart-case\ --follow

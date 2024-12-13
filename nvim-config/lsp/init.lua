@@ -21,20 +21,32 @@ vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(event)
     local opts = {buffer = event.buf, noremap = true, silent = true }
 
-	-- TODO take a look at these
-    vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
-    vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
-    vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
-    vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
-    -- vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
-    vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
-    vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
+    vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', add(opts, {desc = "Hover"}))
+    vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', add(opts, {desc = "Definition"}))
+    vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', add(opts, {desc = "Declaration"}))
+    vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', add(opts, {desc = "Implemenation"}))
+    vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', add(opts, {desc = "Type definition"}))
+    vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', add(opts, {desc = "References/Usages"}))
+    vim.keymap.set('n', 'gu', '<cmd>lua vim.lsp.buf.references()<cr>', add(opts, {desc = "References/Usages"})) -- Find usages
+    vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', add(opts, {desc = "Signature Help"}))
 
+	vim.keymap.set('n', 'ge', function()vim.diagnostic.goto_next({buffer=0}) end, add(opts, {desc = "Next Error"}))
+	vim.keymap.set('n', 'gE', function()vim.diagnostic.goto_prev({buffer=0}) end, add(opts, {desc = "Prev Error"}))
+	-- Show error
+	vim.keymap.set('n', 'gl', function()vim.diagnostic.open_float() end, opts)
+		-- todo gp for go to parent
+-- Refactoring	
+    vim.keymap.set('n', '<leader>rr', '<cmd>lua vim.lsp.buf.code_action()<cr>', add(opts, {desc = "Code actions"}))
+    vim.keymap.set('n', '<leader>rf', '<cmd>lua vim.lsp.buf.format{ async = true }<cr>', add(opts, {desc = "Format"}))
+    vim.keymap.set('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<cr>', add(opts, {desc = "Rename"}))
+-- todo <leader>rf -- rename file
+-- Todo tt for run tests
 
--- Refactoring
-    vim.keymap.set('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-    -- vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
-    -- vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+	local refactor_lib = require('refactoring')
+	refactor_lib.setup()
+	vim.keymap.set({'n', 'v'}, '<leader>rm', function() refactor_lib.refactor('Extract Function') end, add(opts, {desc = "Extract Function"}))
+	vim.keymap.set({'n', 'v'}, '<leader>rv', function() refactor_lib.refactor('Extract Variable') end, add(opts, {desc = "Extract Variable"}))
+	vim.keymap.set('n', '<leader>ri', function() refactor_lib.refactor('Inline Variable') end, add(opts, {desc = "Inline Variable"}))
 
 	-- Add term highlighting
     local id = vim.tbl_get(event, 'data', 'client_id')
@@ -47,3 +59,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 require "user.lsp.mason"
 require "user.lsp.cmp"
+
+
+function add(opts, other)
+	return vim.tbl_deep_extend("force", opts, other)
+end

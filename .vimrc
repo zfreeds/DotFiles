@@ -61,11 +61,7 @@ map <leader>i ~hi
 " Remove selection and toggle case. E.g. `v2l<leader>d`: `getProperty` -> `property`
 vmap <leader>d d~h
 
-"""" Plugin bindings
-"" LSP
-" Refactorings
-"nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<cr>
-"vnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<cr>
+""""  Bindings from back when I used Ideavim
 
 "nnoremap <leader>rs :action ChangeSignature<CR>
 "vmap <leader>rs :action ChangeSignature<CR>
@@ -89,34 +85,19 @@ vmap <leader>d d~h
 "vmap <leader>rm :action ExtractMethod<CR>
 
 "nnoremap <leader>rr <cmd>lua vim.lsp.buf.code_action()<CR>
-vnoremap <leader>rr <cmd>lua vim.lsp.buf.code_action()<CR>
 
-nnoremap K <cmd>lua vim.lsp.buf.hover()<CR>
-
-" Formatting - todo consider better 
-nnoremap <leader>lf <cmd>lua vim.lsp.buf.format{ async = true }<cr> 
-"vnoremap <leader>lf <cmd>lua vim.lsp.buf.format{ async = true }<cr> 
-
-" GoTo
-nnoremap gd <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap gI <cmd>lua vim.lsp.buf.implementation()<CR>
 "nnoremap gp :action GoToSuperMethod<CR>
 "nnoremap <leader>gt :action GotoTest<CR>
-nnoremap <leader>gu <cmd>lua vim.lsp.buf.references()<CR>
+
+" Test and Run
+"nnoremap <leader>tt :action RunClass<CR>
+"nnoremap <leader>tf :action RerunFailedTests<CR>
+
+
 " ]c and [c also work
 nnoremap <leader>gC :GitGutterPrevHunk<cr>
 nnoremap <leader>gc :GitGutterNextHunk<cr>
 
-"""" Errors
-nnoremap ge <cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>
-nnoremap gE <cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>
-" Show error
-nnoremap gl <cmd>lua vim.diagnostic.open_float()<cr>
-
-"
-" Test and Run
-"nnoremap <leader>tt :action RunClass<CR>
-"nnoremap <leader>tf :action RerunFailedTests<CR>
 
 " vim surround, use gs instead of ys
 nmap gs ys
@@ -124,13 +105,6 @@ nmap gs ys
 " Set current directory
 nnoremap <leader>cd :cd %:p:h<CR>
 
-" Find files using Telescope command-line sugar.
-nnoremap <leader>p <cmd>Telescope find_files hidden=true<cr>
-nnoremap <leader>/ <cmd>Telescope live_grep<cr>
-nnoremap <leader>b <cmd>Telescope buffers<cr>
-nnoremap <leader>' <cmd>Telescope marks<cr>
-nnoremap <leader>g <cmd>Telescope git_commits<cr>
-nnoremap <leader>h <cmd>Telescope oldfiles<cr>
 
 " Nerd Tree
 nnoremap <leader>n :NERDTreeFocus<CR>
