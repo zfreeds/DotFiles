@@ -11,6 +11,7 @@ require('fzf-lua').setup{
 }
 
 -- Configure lspfuzzy
+-- FIXME - might not need this if I use Fzf-lua
 require('lspfuzzy').setup {
   methods = 'all',         -- either 'all' or a list of LSP methods (see below)
   jump_one = true,         -- jump immediately if there is only one location

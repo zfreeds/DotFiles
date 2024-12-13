@@ -42,7 +42,6 @@ wk.register({
 -- Fzf changes -- might be useful to look for lines I changed
 
 -- # GoTo
--- map("n", "<leader>gu", "<cmd>lua vim.lsp.buf.references()<CR>", {})
 -- ]c and [c also work
 map("n", "<leader>gC", ":GitGutterPrevHunk<cr>", {})
 map("n", "<leader>gc", ":GitGutterNextHunk<cr>", {})
@@ -61,3 +60,11 @@ map("n", "gE", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", {desc = "Pre
 
 
 
+-- Vim Test
+map("n", "<leader>tn", ":TestNearest<CR>", { silent = true })
+map("n", "<leader>tf", ":TestFile<CR>", { silent = true })
+map("n", "<leader>ts", ":TestSuite<CR>", { silent = true })
+map("n", "<leader>tl", ":TestLast<CR>", { silent = true })
+-- map('n', '<leader>tg', ':TestVisit<CR>', { silent = true })
+vim.g['test#strategy'] = "toggleterm"
+vim.g.dispatch_tmux_pipe_pane = 1  -- needed so $stdout.tty? is true and reline works when debugging

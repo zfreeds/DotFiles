@@ -42,6 +42,9 @@ Plug 'wellle/targets.vim'
 Plug 'airblade/vim-rooter'
 Plug 'RRethy/vim-illuminate'
 Plug 'moll/vim-bbye'
+Plug 'janko/vim-test'
+Plug 'tpope/vim-projectionist' " Jump to test file
+
 
 " NEOVIM ONLY
 Plug 'akinsho/toggleterm.nvim', Cond(is_nvim)
@@ -90,10 +93,14 @@ Plug 'nvim-tree/nvim-web-devicons', Cond(is_nvim)
 Plug 'elihunter173/dirbuf.nvim', Cond(is_nvim)
 Plug 'tpope/vim-dispatch', Cond(is_nvim)    "  -- Run background processes in tmux tabs
 Plug 'christoomey/vim-tmux-navigator', Cond(is_nvim)
-" if executable('shadowenv') == 1
-" 	Plug 'Shopify/shadowenv.vim'
-" endif
 
+" Ruby
+if executable('shadowenv') == 1
+	Plug 'Shopify/shadowenv.vim'
+endif
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-bundler'
+Plug 'noprompt/vim-yardoc'
 call plug#end()
 
 set grepprg=rg\ --vimgrep\ --smart-case\ --follow
