@@ -57,7 +57,7 @@ Plug 'kyazdani42/nvim-web-devicons', Cond(is_nvim)
 	Plug 'nvim-lualine/lualine.nvim', Cond(is_nvim)
 	Plug 'akinsho/bufferline.nvim', Cond(is_nvim)
 Plug 'folke/which-key.nvim', Cond(is_nvim)
-Plug 'goolord/alpha-nvim', Cond(is_nvim)
+" Plug 'goolord/alpha-nvim', Cond(is_nvim)
 Plug 'epwalsh/obsidian.nvim', Cond(is_nvim)
 Plug 'rmagatti/auto-session', Cond(is_nvim)
 

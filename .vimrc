@@ -30,12 +30,6 @@ nnoremap L :bn<CR>
 nnoremap H :bp<CR>
 nnoremap <leader>x :Bd<CR>
 
-" Navigating within a buffer
-"nnoremap [[ :action MethodUp<CR>
-"nnoremap ]] :action MethodDown<CR>
-
-
-"" Refactoring
 
 " Duplicate line
 nmap yp "dyy"dp
@@ -61,50 +55,16 @@ map <leader>i ~hi
 " Remove selection and toggle case. E.g. `v2l<leader>d`: `getProperty` -> `property`
 vmap <leader>d d~h
 
-""""  Bindings from back when I used Ideavim
-
-"nnoremap <leader>rs :action ChangeSignature<CR>
-"vmap <leader>rs :action ChangeSignature<CR>
-"
-"nnoremap <leader>ri :lua InlineVar()
-"vmap <leader>ri :action Inline<CR>
-"
-"nnoremap <leader>rv :action IntroduceVariable<CR>
-"vmap <leader>rv :action IntroduceVariable<CR>
-"
-"nnoremap <leader>rc :action IntroduceConstant<CR>
-"vmap <leader>rc :action IntroduceConstant<CR>
-"
-"vmap <leader>rp :action IntroduceParameter<CR>
-"nnoremap <leader>rp :action IntroduceParameter<CR>
-"
-"nnoremap <leader>rf :action RenameFile<CR>
-"vmap <leader>rf :action RenameFile<CR>
-"
-"nnoremap <leader>rm :action ExtractMethod<CR>
-"vmap <leader>rm :action ExtractMethod<CR>
-
-"nnoremap <leader>rr <cmd>lua vim.lsp.buf.code_action()<CR>
-
-"nnoremap gp :action GoToSuperMethod<CR>
-"nnoremap <leader>gt :action GotoTest<CR>
-
-" Test and Run
-"nnoremap <leader>tt :action RunClass<CR>
-"nnoremap <leader>tf :action RerunFailedTests<CR>
-
 
 " ]c and [c also work
 nnoremap <leader>gC :GitGutterPrevHunk<cr>
 nnoremap <leader>gc :GitGutterNextHunk<cr>
-
 
 " vim surround, use gs instead of ys
 nmap gs ys
 
 " Set current directory
 nnoremap <leader>cd :cd %:p:h<CR>
-
 
 " Nerd Tree
 nnoremap <leader>n :NERDTreeFocus<CR>
@@ -126,10 +86,8 @@ nnoremap N Nzzzv
 
 runtime! config/*.vim
 
-
 " Don't clear the screen after tests finish
 let g:test#preserve_screen = 1
-
 
 let g:tmux_navigator_no_mappings = 1
 
