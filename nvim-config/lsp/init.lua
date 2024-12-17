@@ -23,12 +23,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 		-- todo look into lsp_finder  -- all lsp locations combined
     vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', add(opts, {desc = "Hover"}))
-    vim.keymap.set('n', 'gd', '<cmd>FzfLua lsp_definition<cr>', add(opts, {desc = "Definition"}))
-    vim.keymap.set('n', 'gD', '<cmd>FzfLua lsp_declaration<cr>', add(opts, {desc = "Declaration"}))
+    vim.keymap.set('n', 'gd', '<cmd>FzfLua lsp_definitions<cr>', add(opts, {desc = "Definition"}))
+    vim.keymap.set('n', 'gD', '<cmd>FzfLua lsp_declarations<cr>', add(opts, {desc = "Declaration"}))
     vim.keymap.set('n', 'gi', '<cmd>FzfLua lsp_implementations<cr>', add(opts, {desc = "Implemenation"}))
     vim.keymap.set('n', 'go', '<cmd>FzfLua lsp_definitions<cr>', add(opts, {desc = "Type definition"}))
     vim.keymap.set('n', 'gr', '<cmd>FzfLua lsp_references<cr>', add(opts, {desc = "References/Usages"}))
-    vim.keymap.set('n', 'gu', '<cmd>FzfLua lsp_references<cr>', add(opts, {desc = "References/Usages"})) -- Find usages
     vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', add(opts, {desc = "Signature Help"}))
 
 	vim.keymap.set('n', 'ge', function()vim.diagnostic.goto_next({buffer=0}) end, add(opts, {desc = "Next Error"}))

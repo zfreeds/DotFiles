@@ -33,7 +33,7 @@ vim.api.nvim_create_user_command('BufOnly', 'BufferLineCloseOthers', {})
 
 map("n", "<leader>p", find_files, {desc = "Find files"})
 map("n", "<C-p>", find_files, {desc = "Find files"})
-map("n", "<leader>/", function()fzf_lua.live_grep({file_ignore_patterns = file_ignore_patterns})end, {desc = "Live grep"})
+map("n", "<leader>/", function()fzf_lua.grep({file_ignore_patterns = file_ignore_patterns})end, {desc = "Grep"})
 map("n", "<leader>:", fzf_lua.commands, {desc = "Find helpful commands"})
 
 wk.register({
