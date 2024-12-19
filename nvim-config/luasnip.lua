@@ -24,29 +24,22 @@ function getDate(time)
 end
 
 -- fixme this probably runs date logic on start instead of when template is called
-ls.add_snippets(nil, {
-	all = {
-		snip({
-			trig = "dailyNote",
-			dscr = "Template for a daily note",
-			}, {
-				text({
-					"---",
-					"Locations: Ottawa",
-					"Tags: ",
-					"Related to: ",
-					"Tldr: ",
-					"Emotional Themes: ",
-					"File Creation Date: " .. getDate(currentTime),
-					"---",
-					"<<  [[" .. getDate(yesterdayTime) .."]] - [[" .. getDate(currentTime) .. "|Here]] - [[" .. getDate(tomorrowTime) .. "]] >>",
-					"",
-					"On this day last year: [[]]",
-					"## What happened today?",
-					"## What did I achieve?",
-					"## Why am I grateful?",
-					"## How was today?"
-				})
-		}),
-	},
-})
+-- ls.add_snippets(nil, {
+-- 	all = {
+-- 		snip({
+-- 			trig = "dailyNote",
+-- 			dscr = "Template for a daily note",
+-- 			}, {
+-- 				text({
+-- 					"---",
+-- 					"Locations: Ottawa",
+-- 					"Tags: ",
+-- 					"File Creation Date: " .. getDate(currentTime),
+-- 					"---",
+-- 					"<<  [[" .. getDate(yesterdayTime) .."]] - [[" .. getDate(currentTime) .. "|Here]] - [[" .. getDate(tomorrowTime) .. "]] >>",
+-- 					"",
+-- 					"## What happened today?",
+-- 				})
+-- 		}),
+-- 	},
+-- })

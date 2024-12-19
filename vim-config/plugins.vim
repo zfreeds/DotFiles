@@ -99,7 +99,7 @@ if executable('shadowenv') == 1
 	Plug 'Shopify/shadowenv.vim'
 endif
 Plug 'tpope/vim-rails'
-Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-vundler'
 Plug 'noprompt/vim-yardoc'
 call plug#end()
 

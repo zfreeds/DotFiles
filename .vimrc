@@ -7,13 +7,6 @@ let mapleader = "\<Space>"
 " let g:user_emmet_leader_key=','
 imap jk <Esc>
 
-""""" Navigating
-" Scrolling
-nmap <leader>d <C-d>
-nmap <leader>u <C-u>
-vmap <leader>d <C-d>
-vmap <leader>u <C-u>
-
 " Split navigation
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
@@ -29,7 +22,6 @@ nnoremap <C-Left> :vertical resize -2<CR>
 nnoremap L :bn<CR>
 nnoremap H :bp<CR>
 nnoremap <leader>x :Bd<CR>
-
 
 " Duplicate line
 nmap yp "dyy"dp

@@ -37,7 +37,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		-- todo gp for go to parent
 -- Refactoring	
     vim.keymap.set('n', '<leader>rr', '<cmd>lua vim.lsp.buf.code_action()<cr>', add(opts, {desc = "Code actions"}))
-    vim.keymap.set('n', '<leader>rf', '<cmd>lua vim.lsp.buf.format{ async = true }<cr>', add(opts, {desc = "Format"}))
+    vim.keymap.set({'n', 'v'}, '<leader>rf', '<cmd>lua vim.lsp.buf.format{ async = true }<cr>', add(opts, {desc = "Format"}))
     vim.keymap.set('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<cr>', add(opts, {desc = "Rename"}))
 -- todo <leader>rf -- rename file
 -- Todo tt for run tests
