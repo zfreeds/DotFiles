@@ -26,7 +26,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'machakann/vim-highlightedyank' " Briefly highlight which text was yanked.
 Plug 'mattn/emmet-vim'
-Plug 'michaeljsmith/vim-indent-object', { 'tag': '1.1.2'}
+Plug 'michaeljsmith/vim-indent-object'
 Plug 'morhetz/gruvbox'
 Plug 'nelstrom/vim-visual-star-search' " * searches for visually selected pattern
 Plug 'preservim/nerdtree'
@@ -83,6 +83,8 @@ Plug 'williamboman/mason-lspconfig.nvim', Cond(is_nvim) " simple to use language
 
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', Cond(is_nvim, {'do': ':TSUpdate'})
+Plug 'nvim-treesitter/nvim-treesitter-textobjects', Cond(is_nvim)
+Plug 'RRethy/nvim-treesitter-endwise', Cond(is_nvim)
 
 Plug 'junegunn/fzf', Cond(is_nvim, { 'do': { -> fzf#install() } })
 Plug 'ibhagwan/fzf-lua', Cond(is_nvim, {'branch': 'main'})
@@ -99,7 +101,6 @@ if executable('shadowenv') == 1
 	Plug 'Shopify/shadowenv.vim'
 endif
 Plug 'tpope/vim-rails'
-Plug 'tpope/vim-vundler'
 Plug 'noprompt/vim-yardoc'
 call plug#end()
 
