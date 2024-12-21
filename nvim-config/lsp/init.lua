@@ -64,3 +64,11 @@ require "user.lsp.cmp"
 function add(opts, other)
 	return vim.tbl_deep_extend("force", opts, other)
 end
+
+
+vim.diagnostic.config({
+	underline = true,
+	float = {
+		source = true,
+	},
+})
