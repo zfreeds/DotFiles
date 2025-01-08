@@ -39,11 +39,12 @@ map("n", "<leader>:", fzf_lua.commands, {desc = "Find helpful commands"})
 wk.register({
   s = { name = "Search",
     m = { fzf_lua.marks, "Marks" },
-    g = { fzf_lua.git_commits, "Git Commits" },
+    g = { fzf_lua.git_bcommits, "Git Buffer Commits" },
     h = { fzf_lua.oldfiles, "Recent Files" },
     q = { fzf_lua.quickfix, "Quickfix" },
     [":"] = { fzf_lua.help_tags, "Vim Help Pages" },
-	s = { fzf_lua.lsp_live_workspace_symbols, "Symbols/Classes" }
+	s = { fzf_lua.lsp_live_workspace_symbols, "Symbols/Classes" },
+	r = { fzf_lua.resume, "Resume" }
 
   },
   f = { name = "Find",

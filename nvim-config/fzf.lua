@@ -8,6 +8,12 @@ fzf_lua.setup{
 	-- defaults = {
 	-- 	formatter = "path.filename_first", -- Don't use this or else its harder to search
 	-- },
+	winopts = {
+		width = 0.9,
+	},
+	lsp = {
+		includeDeclaration = false
+	},
 	fzf_opts = {
 		["--layout"] = "reverse"
 	}
