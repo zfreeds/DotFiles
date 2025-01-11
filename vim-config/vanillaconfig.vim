@@ -6,8 +6,8 @@ set relativenumber
 set laststatus=2 " always show bottom bar
 set autoread
 " Todo: Figure out how to know when to do these two
-"set termguicolors
-":hi CursorLine guifg=None
+" set termguicolors
+" :hi CursorLine guifg=None
 set timeoutlen=1000
 
 set directory^=$HOME/.vim/swap// " Set swp file location if exists. 
@@ -63,8 +63,3 @@ function! ExecuteMacroOverVisualRange()
   echo "@".getcmdline()
   execute ":'<,'>normal @".nr2char(getchar())
 endfunction
-
-augroup autosourcevimrc | au!
-	" Auto source vimrc
-	autocmd bufwritepost .vimrc source $MYVIMRC
-augroup end

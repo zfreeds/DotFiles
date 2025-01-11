@@ -5,17 +5,6 @@ if not status_ok then
 end
 local fzf_lua = require('fzf-lua')
 
--- TODO - create a float that can edit this on a per-project basis and save it
--- Alternatively, see if there's a lua file you can change per project
-local file_ignore_patterns = {
-	"%.rbi$",
-	"./log",
-	"public",
-	"tmp",
-	"vendor",
-	"sorbet"
-
-}
 wk.setup({ notify = false })
 
 local map = function(modes, key, cmd, opts)
@@ -24,7 +13,7 @@ local map = function(modes, key, cmd, opts)
 end
 
 local function find_files()
-	fzf_lua.files({file_ignore_patterns = file_ignore_patterns})
+	fzf_lua.files({file_ignore_patterns = vim.g.fzf_file_ignore_patterns})
 end
 
 -- I keep thinking `BufOnly` is the name of the command
@@ -33,7 +22,7 @@ vim.api.nvim_create_user_command('BufOnly', 'BufferLineCloseOthers', {})
 
 map("n", "<leader>p", find_files, {desc = "Find files"})
 map("n", "<C-p>", find_files, {desc = "Find files"})
-map("n", "<leader>/", function()fzf_lua.live_grep_glob({file_ignore_patterns = file_ignore_patterns})end, {desc = "Grep"})
+map("n", "<leader>/", function()fzf_lua.live_grep_glob({file_ignore_patterns = vim.g.fzf_file_ignore_patterns})end, {desc = "Grep"})
 map("n", "<leader>:", fzf_lua.commands, {desc = "Find helpful commands"})
 
 wk.register({
@@ -77,3 +66,7 @@ map("n", "<leader>tl", ":TestLast<CR>", { silent = true })
 -- map('n', '<leader>tg', ':TestVisit<CR>', { silent = true })
 vim.g['test#strategy'] = "toggleterm"
 vim.g.dispatch_tmux_pipe_pane = 1  -- needed so $stdout.tty? is true and reline works when debugging
+
+
+
+map("n", "-", ":Oil<cr>", {desc = "Oil - edit file structure"})

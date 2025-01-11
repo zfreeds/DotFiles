@@ -27,3 +27,27 @@ vim.api.nvim_create_user_command('FindSimilarFiles', function()
 	fzf_lua.files({query=parent_dir .. "/" .. filename_root})
 end, {})
 
+
+-- TODO - create a float that can edit this on a per-project basis and save it
+-- Alternatively, see if there's a lua file you can change per project
+local default_file_ignore_patterns = {
+	"%.rbi$",
+	"./log",
+	"public",
+	"tmp",
+	"vendor",
+	"sorbet",
+	-- Dotfiles repo
+	"dotbot",
+	"install"
+}
+vim.g.fzf_file_ignore_patterns = default_file_ignore_patterns
+
+vim.api.nvim_create_user_command('ToggleIgnoreFiles', function()
+	if (vim.deep_equal(vim.g.fzf_file_ignore_patterns,  default_file_ignore_patterns)) then
+		vim.g.fzf_file_ignore_patterns = {}
+	else
+		vim.g.fzf_file_ignore_patterns = default_file_ignore_patterns
+	end
+	print(vim.inspect(vim.g.fzf_file_ignore_patterns))
+end, {})

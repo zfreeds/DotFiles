@@ -25,7 +25,6 @@ Plug 'inkarkat/vim-ReplaceWithRegister'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'machakann/vim-highlightedyank' " Briefly highlight which text was yanked.
-Plug 'mattn/emmet-vim'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'morhetz/gruvbox'
 Plug 'nelstrom/vim-visual-star-search' " * searches for visually selected pattern
@@ -36,7 +35,7 @@ Plug 'tpope/vim-abolish' "Mostly used for changing case
 Plug 'tpope/vim-fugitive' "Git
 Plug 'tpope/vim-rhubarb' " Allows visiting Github URLs
 Plug 'tpope/vim-repeat' " dot works as expected on plugins
-Plug 'tpope/vim-surround' " dot works as expected on plugins
+Plug 'tpope/vim-surround'
 Plug 'tpope/vim-sensible'
 Plug 'wellle/targets.vim'
 Plug 'airblade/vim-rooter'
@@ -48,7 +47,6 @@ Plug 'tpope/vim-projectionist' " Jump to test file
 
 " NEOVIM ONLY
 Plug 'akinsho/toggleterm.nvim', Cond(is_nvim)
-Plug 'iamcco/markdown-preview.nvim', Cond(is_nvim, { 'do': 'cd app && yarn install' })
 Plug 'lukas-reineke/indent-blankline.nvim', Cond(is_nvim)
 Plug 'windwp/nvim-autopairs', Cond(is_nvim)
 Plug 'numToStr/Comment.nvim', Cond(is_nvim, {'commit':'97a188a98b5a3a6f9b1b850799ac078faa17ab67'})
@@ -58,7 +56,6 @@ Plug 'kyazdani42/nvim-web-devicons', Cond(is_nvim)
 	Plug 'akinsho/bufferline.nvim', Cond(is_nvim)
 Plug 'folke/which-key.nvim', Cond(is_nvim)
 " Plug 'goolord/alpha-nvim', Cond(is_nvim)
-Plug 'epwalsh/obsidian.nvim', Cond(is_nvim)
 Plug 'rmagatti/auto-session', Cond(is_nvim)
 
 " LSP Related
@@ -92,9 +89,9 @@ Plug 'ojroques/nvim-lspfuzzy', Cond(is_nvim) "        -- LSP Results use FZF
 " optional for icon support
 Plug 'nvim-tree/nvim-web-devicons', Cond(is_nvim)
 
-Plug 'elihunter173/dirbuf.nvim', Cond(is_nvim)
-Plug 'tpope/vim-dispatch', Cond(is_nvim)    "  -- Run background processes in tmux tabs
+Plug 'stevearc/oil.nvim', Cond(is_nvim)
 Plug 'christoomey/vim-tmux-navigator', Cond(is_nvim)
+Plug 'j-hui/fidget.nvim', Cond(is_nvim)
 
 " Ruby
 if executable('shadowenv') == 1
