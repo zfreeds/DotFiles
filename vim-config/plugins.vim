@@ -82,6 +82,8 @@ Plug 'williamboman/mason-lspconfig.nvim', Cond(is_nvim) " simple to use language
 Plug 'nvim-treesitter/nvim-treesitter', Cond(is_nvim, {'do': ':TSUpdate'})
 Plug 'nvim-treesitter/nvim-treesitter-textobjects', Cond(is_nvim)
 Plug 'RRethy/nvim-treesitter-endwise', Cond(is_nvim)
+Plug 'nvim-treesitter/nvim-treesitter-context', Cond(is_nvim)
+
 
 Plug 'junegunn/fzf', Cond(is_nvim, { 'do': { -> fzf#install() } })
 Plug 'ibhagwan/fzf-lua', Cond(is_nvim, {'branch': 'main'})
@@ -99,6 +101,7 @@ if executable('shadowenv') == 1
 endif
 Plug 'tpope/vim-rails'
 Plug 'noprompt/vim-yardoc'
+Plug('tpope/vim-bundler')
 call plug#end()
 
 set grepprg=rg\ --vimgrep\ --smart-case\ --follow

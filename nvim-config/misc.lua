@@ -23,4 +23,10 @@ require("oil").setup {
 	}
 }
 
+-- Show helpful lines when scrolling down
+require 'treesitter-context'.setup {
+	max_lines = 5,
+	line_numbers = false
+}
+
 vim.g.rooter_patterns = { 'Gemfile', '.git', 'Makefile', '*.sln', 'build/env.sh' }
