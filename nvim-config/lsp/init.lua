@@ -47,6 +47,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 	vim.keymap.set({'n', 'v'}, '<leader>rm', function() refactor_lib.refactor('Extract Function') end, add(opts, {desc = "Extract Function"}))
 	vim.keymap.set({'n', 'v'}, '<leader>rv', function() refactor_lib.refactor('Extract Variable') end, add(opts, {desc = "Extract Variable"}))
 	vim.keymap.set('n', '<leader>ri', function() refactor_lib.refactor('Inline Variable') end, add(opts, {desc = "Inline Variable"}))
+	vim.keymap.set('n', '<leader>rI', function() refactor_lib.refactor('Inline Function') end, add(opts, {desc = "Inline Variable"}))
 
 	-- Add term highlighting
     local id = vim.tbl_get(event, 'data', 'client_id')
