@@ -70,3 +70,9 @@ vim.g.dispatch_tmux_pipe_pane = 1  -- needed so $stdout.tty? is true and reline 
 
 
 map("n", "-", ":Oil<cr>", {desc = "Oil - edit file structure"})
+
+vim.api.nvim_create_user_command(
+	"CopyPath",
+	":let @+=@%",
+	{ desc = "Copy the current path to the clipboard"}
+)

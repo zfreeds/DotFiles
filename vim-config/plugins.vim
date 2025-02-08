@@ -43,7 +43,7 @@ Plug 'RRethy/vim-illuminate'
 Plug 'moll/vim-bbye'
 Plug 'janko/vim-test'
 Plug 'tpope/vim-projectionist' " Jump to test file
-
+Plug 'itchyny/vim-qfedit' " Modifiable quickfix lists
 
 " NEOVIM ONLY
 Plug 'akinsho/toggleterm.nvim', Cond(is_nvim)
