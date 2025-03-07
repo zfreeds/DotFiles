@@ -29,4 +29,4 @@ require 'treesitter-context'.setup {
 	line_numbers = false
 }
 
-vim.g.rooter_patterns = { 'Gemfile', '.git', 'Makefile', '*.sln', 'build/env.sh' }
+vim.g.rooter_patterns = { 'Gemfile', '.git', 'Makefile', '*.sln', 'build/env.sh', 'dev.yml' }

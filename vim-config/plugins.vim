@@ -57,6 +57,8 @@ Plug 'kyazdani42/nvim-web-devicons', Cond(is_nvim)
 Plug 'folke/which-key.nvim', Cond(is_nvim)
 " Plug 'goolord/alpha-nvim', Cond(is_nvim)
 Plug 'rmagatti/auto-session', Cond(is_nvim)
+Plug 'neomake/neomake', Cond(is_nvim)
+Plug 'tpope/vim-dispatch', Cond(is_nvim)
 
 " LSP Related
 Plug 'ThePrimeagen/refactoring.nvim', Cond(is_nvim)
