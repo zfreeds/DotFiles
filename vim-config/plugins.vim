@@ -97,12 +97,10 @@ Plug 'nvim-tree/nvim-web-devicons', Cond(is_nvim)
 Plug 'stevearc/oil.nvim', Cond(is_nvim)
 Plug 'christoomey/vim-tmux-navigator', Cond(is_nvim)
 
-" Noice
-Plug 'folke/noice.nvim', Cond(is_nvim)
-Plug 'MunifTanjim/nui.nvim', Cond(is_nvim)
-Plug 'rcarriga/nvim-notify', Cond(is_nvim)
+" Folding
+Plug 'kevinhwang91/nvim-ufo', Cond(is_nvim)
+Plug 'kevinhwang91/promise-async', Cond(is_nvim)
 
-"
 
 " Ruby
 if executable('shadowenv') == 1
