@@ -37,6 +37,12 @@ local filetype = {
 	icon = nil,
 }
 
+local working_dir = {
+	function() return vim.fn.fnamemodify(vim.fn.getcwd(), ":t")  end,
+	-- icons_enabled = true,
+	icon = "",
+}
+
 local branch = {
 	"branch",
 	icons_enabled = true,
@@ -49,14 +55,14 @@ local location = {
 }
 
 -- cool function for progress
-local progress = function()
-	local current_line = vim.fn.line(".")
-	local total_lines = vim.fn.line("$")
-	local chars = { "▁▁", "▂▂", "▃▃", "▄▄", "▅▅", "▆▆", "▇▇", "██" }
-	local line_ratio = current_line / total_lines
-	local index = math.ceil(line_ratio * #chars)
-	return chars[index]
-end
+-- local progress = function()
+-- 	local current_line = vim.fn.line(".")
+-- 	local total_lines = vim.fn.line("$")
+-- 	local chars = { "▁▁", "▂▂", "▃▃", "▄▄", "▅▅", "▆▆", "▇▇", "██" }
+-- 	local line_ratio = current_line / total_lines
+-- 	local index = math.ceil(line_ratio * #chars)
+-- 	return chars[index]
+-- end
 
 
 local filepath = {
@@ -75,10 +81,10 @@ lualine.setup({
 	sections = {
 		lualine_a = { branch, diagnostics },
 		lualine_b = { mode },
-		lualine_c = { filepath },
-		lualine_x = { diff, "encoding", filetype },
+		lualine_c = { working_dir, "[[|]]", filepath },
+		lualine_x = { diff, filetype },
 		lualine_y = { location },
-		lualine_z = { progress },
+		lualine_z = { "progress" },
 	},
 	inactive_sections = {
 		lualine_a = {},

@@ -59,6 +59,7 @@ Plug 'folke/which-key.nvim', Cond(is_nvim)
 Plug 'rmagatti/auto-session', Cond(is_nvim)
 Plug 'neomake/neomake', Cond(is_nvim)
 Plug 'tpope/vim-dispatch', Cond(is_nvim)
+Plug 'sindrets/diffview.nvim', Cond(is_nvim)
 
 " LSP Related
 Plug 'ThePrimeagen/refactoring.nvim', Cond(is_nvim)
@@ -95,7 +96,13 @@ Plug 'nvim-tree/nvim-web-devicons', Cond(is_nvim)
 
 Plug 'stevearc/oil.nvim', Cond(is_nvim)
 Plug 'christoomey/vim-tmux-navigator', Cond(is_nvim)
-Plug 'j-hui/fidget.nvim', Cond(is_nvim)
+
+" Noice
+Plug 'folke/noice.nvim', Cond(is_nvim)
+Plug 'MunifTanjim/nui.nvim', Cond(is_nvim)
+Plug 'rcarriga/nvim-notify', Cond(is_nvim)
+
+"
 
 " Ruby
 if executable('shadowenv') == 1

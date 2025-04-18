@@ -8,9 +8,6 @@ require("auto-session").setup {
 require("ibl").setup { }
 
 
--- Show information about slow lsps
-require("fidget").setup { }
-
 -- Edit project structure
 require("oil").setup {
 	delete_to_trash = true,
