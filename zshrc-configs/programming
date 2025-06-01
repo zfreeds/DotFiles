@@ -1,4 +1,18 @@
 eval "$(shadowenv init zsh 2> /dev/null)"
+
+# AI work
+start_nvim() {
+    CURRENT_DIR=$(basename "$PWD")
+    SOCKET="/tmp/nvim-${CURRENT_DIR}"
+    nvim --listen "$SOCKET"
+}
+
+run_dev_claude() {
+    local socket_path="/tmp/nvim-$(basename "$PWD")"
+    dev claude -- "My vim/neovim is listening at the socket $socket_path. When I give commands, I want you to use that as context"
+}
+
+
 # Wildcards need 2+ items to link
 alias tf=terraform
 alias gpofwl='git push origin --force-with-lease'
@@ -10,10 +24,11 @@ git config --global diff.colorMoved zebra
 git config --global user.name "Zack Freedman"
 
 # Aliases
-alias vim="nvim"
 alias gpo="git push origin"
 alias tf=terraform
-
+alias vim="start_nvim"
+# alias nvim='start_nvim'
+alias ai='run_dev_claude'
 
 # Ruby
 export PATH="/usr/local/share/chruby:$PATH"

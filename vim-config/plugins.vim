@@ -101,6 +101,8 @@ Plug 'christoomey/vim-tmux-navigator', Cond(is_nvim)
 Plug 'kevinhwang91/nvim-ufo', Cond(is_nvim)
 Plug 'kevinhwang91/promise-async', Cond(is_nvim)
 
+Plug 'github/copilot.vim'
+Plug 'zbirenbaum/copilot-cmp', Cond(is_nvim)
 
 " Ruby
 if executable('shadowenv') == 1

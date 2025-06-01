@@ -11,6 +11,12 @@ end
 
 require("luasnip/loaders/from_vscode").lazy_load()
 
+-- Setup copilot-cmp if available
+local copilot_cmp_status_ok, copilot_cmp = pcall(require, "copilot_cmp")
+if copilot_cmp_status_ok then
+  copilot_cmp.setup()
+end
+
 local check_backspace = function()
   local col = vim.fn.col "." - 1
   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
@@ -65,10 +71,20 @@ cmp.setup {
       "s",
     }),
   },
-  formatting = lsp_zero.cmp_format({details = true}),
+  formatting = lsp_zero.cmp_format({
+    details = true,
+    format = function(entry, vim_item)
+      if entry.source.name == "copilot" then
+        vim_item.kind = "🤖"
+        vim_item.menu = "[Copilot]"
+      end
+      return vim_item
+    end,
+  }),
   sources = {
+    { name = "copilot", group_index = 2 },
+    { name = "nvim_lsp", group_index = 2 },
     { name = "luasnip", keyword_length = 2 },
-    { name = "nvim_lsp" },
     { name = "nvim_lua" },
     { name = "buffer", keyword_length = 3 },
     { name = "path" },
