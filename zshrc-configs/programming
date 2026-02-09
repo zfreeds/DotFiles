@@ -1,4 +1,5 @@
 eval "$(shadowenv init zsh 2> /dev/null)"
+export RAILS_LOG_TO_STDOUT=1 # Shopify var
 
 # AI work
 start_nvim() {

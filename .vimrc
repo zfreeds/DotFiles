@@ -78,6 +78,13 @@ nnoremap N Nzzzv
 
 runtime! config/*.vim
 
+" File type associations
+augroup FileTypeAssociations
+  autocmd!
+  " Treat .rbi files as Ruby files (Sorbet Ruby interface files)
+  autocmd BufRead,BufNewFile *.rbi setfiletype ruby
+augroup END
+
 " Don't clear the screen after tests finish
 let g:test#preserve_screen = 1
 
