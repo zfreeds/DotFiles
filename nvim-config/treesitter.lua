@@ -4,8 +4,7 @@ if not status_ok then
 	return
 end
 
--- TODO: change back to "all" once tree-sitter-cli is installed (brew install tree-sitter-cli or npm install -g tree-sitter-cli)
-ts.install({ "ruby" })
+ts.install({ "all" })
 
 local ts_augroup = vim.api.nvim_create_augroup('TreesitterSetup', { clear = true })
 vim.api.nvim_create_autocmd('FileType', {
