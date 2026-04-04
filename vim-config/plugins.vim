@@ -26,17 +26,14 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'machakann/vim-highlightedyank' " Briefly highlight which text was yanked.
 Plug 'michaeljsmith/vim-indent-object'
-Plug 'morhetz/gruvbox'
 Plug 'nelstrom/vim-visual-star-search' " * searches for visually selected pattern
 Plug 'preservim/nerdtree'
-Plug 'ryanoasis/vim-devicons'
 Plug 'tommcdo/vim-exchange'
 Plug 'tpope/vim-abolish' "Mostly used for changing case
 Plug 'tpope/vim-fugitive' "Git
 Plug 'tpope/vim-rhubarb' " Allows visiting Github URLs
 Plug 'tpope/vim-repeat' " dot works as expected on plugins
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-sensible'
 Plug 'wellle/targets.vim'
 Plug 'airblade/vim-rooter'
 Plug 'RRethy/vim-illuminate'
@@ -52,14 +49,12 @@ Plug 'akinsho/toggleterm.nvim', Cond(is_nvim)
 Plug 'lukas-reineke/indent-blankline.nvim', Cond(is_nvim)
 Plug 'windwp/nvim-autopairs', Cond(is_nvim)
 Plug 'numToStr/Comment.nvim', Cond(is_nvim)
-	Plug'JoosepAlviste/nvim-ts-context-commentstring', Cond(is_nvim)
-Plug 'kyazdani42/nvim-web-devicons', Cond(is_nvim)
-	Plug 'nvim-lualine/lualine.nvim', Cond(is_nvim)
-	Plug 'akinsho/bufferline.nvim', Cond(is_nvim)
+Plug'JoosepAlviste/nvim-ts-context-commentstring', Cond(is_nvim)
+Plug 'nvim-lualine/lualine.nvim', Cond(is_nvim)
+Plug 'akinsho/bufferline.nvim', Cond(is_nvim)
 Plug 'folke/which-key.nvim', Cond(is_nvim)
 " Plug 'goolord/alpha-nvim', Cond(is_nvim)
 Plug 'rmagatti/auto-session', Cond(is_nvim)
-Plug 'neomake/neomake', Cond(is_nvim)
 Plug 'tpope/vim-dispatch', Cond(is_nvim)
 Plug 'sindrets/diffview.nvim', Cond(is_nvim)
 
