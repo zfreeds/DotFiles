@@ -43,6 +43,20 @@ This skill runs a 6-phase workflow to gather context from all integrated systems
    - **Unicorns** (vault-mcp): Search `vault_search_all` with query `"unicorn Zack Freedman"` to find unicorn recognition posts. These are important self-review material — capture who gave it, why, and link to the Vault post.
    - **Incidents** (slack-mcp): Search for incident channels Zack participated in: `action: "search"` with `query: "from:@Zack Freedman in:#inc-"`. Incident response (especially off-hours) is high-value win material — capture what happened, what Zack did, and the outcome.
 
+4. **Google Workspace** (gworkspace-mcp)
+   - **Calendar**: Fetch events since the lookback point using `calendar_events` with `time_min` set to the lookback datetime and `include_attachments: true`. Capture meetings attended, 1:1s, planning sessions — these provide context for what Zack was working on and decisions made.
+   - **Meeting transcripts**: For events that have attached Google Docs (commonly auto-generated transcripts from Google Meet), read the doc using `read_file` with the attachment's file ID. Summarize key discussion points, decisions, and action items from the transcript.
+   - **Google Docs** (tracked documents): Read content and comments from actively-tracked docs (see Tracked Documents below). New comments and content changes since last sync are valuable context — capture decisions, open questions, and action items. Use `read_file` with the file ID.
+   - **Google Drive** (recent activity): Optionally search Drive with `search_drive` for recently modified files Zack owns or was shared on, to catch new docs or decks relevant to active projects.
+
+   **Rules for Google Workspace data**:
+   - Calendar events go in the sync note for the day they occurred
+   - For meeting transcripts, summarize at medium detail: key decisions, action items, and topics discussed — not a full transcript dump. Attribute statements to `[[Full Name]]` when the speaker is identifiable.
+   - Include Google Doc comments with author attribution as `[[Full Name]]`
+   - Link to Google Docs using their URL: `https://docs.google.com/document/d/{file_id}`
+   - If a meeting has a linked doc/slides attachment, note it and read if relevant
+   - Skip recurring standup/ceremony meetings unless something noteworthy happened (use Slack context or transcript content to judge)
+
 ### Phase 2: Create/Update Sync Notes
 
 **Objective**: Create or update sync notes in `AI/Daily/`. One note per day is created for each day since the last sync. For example, if `last_synced` was Tuesday evening and it's now Friday, create notes for Wednesday, Thursday, and Friday — each containing only that day's Slack messages and activity.
@@ -147,6 +161,7 @@ Channel IDs are needed for constructing Slack links. Always record the channel I
 
 ### Project Channels
 - `#managed-international-pricing` (C093Z8YKD0W)
+- `#proj-m1-new-shipping-option` (C08GZEGL8RW) — New delivery settings M1 rollout. Only track items that interact with adaptive shipping (carrier service registration, rate display, handling fees). Skip shopibot flag assignments and unrelated M1 bugs.
 
 ### Team Channels
 - `#cross-border-shipping-dev` (CQ7Q4L0BE)

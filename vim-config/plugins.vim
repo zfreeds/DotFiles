@@ -43,7 +43,7 @@ Plug 'RRethy/vim-illuminate'
 Plug 'moll/vim-bbye'
 Plug 'janko/vim-test'
 Plug 'tpope/vim-projectionist' " Jump to test file
-Plug 'itchyny/vim-qfedit' " Modifiable quickfix lists
+" Plug 'itchyny/vim-qfedit' " Modifiable quickfix lists - trying quicker.nvim instead
 Plug 'tommcdo/vim-lion'
 Plug 'AndrewRadev/splitjoin.vim'
 
@@ -62,6 +62,12 @@ Plug 'rmagatti/auto-session', Cond(is_nvim)
 Plug 'neomake/neomake', Cond(is_nvim)
 Plug 'tpope/vim-dispatch', Cond(is_nvim)
 Plug 'sindrets/diffview.nvim', Cond(is_nvim)
+
+" DAP (Debug Adapter Protocol)
+Plug 'mfussenegger/nvim-dap', Cond(is_nvim)
+Plug 'rcarriga/nvim-dap-ui', Cond(is_nvim)
+Plug 'nvim-neotest/nvim-nio', Cond(is_nvim)
+Plug 'theHamsta/nvim-dap-virtual-text', Cond(is_nvim)
 
 " LSP Related
 Plug 'ThePrimeagen/refactoring.nvim', Cond(is_nvim)
@@ -96,6 +102,7 @@ Plug 'ojroques/nvim-lspfuzzy', Cond(is_nvim) "        -- LSP Results use FZF
 " optional for icon support
 Plug 'nvim-tree/nvim-web-devicons', Cond(is_nvim)
 
+Plug 'stevearc/quicker.nvim', Cond(is_nvim)
 Plug 'stevearc/oil.nvim', Cond(is_nvim)
 Plug 'christoomey/vim-tmux-navigator', Cond(is_nvim)
 

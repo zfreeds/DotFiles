@@ -41,6 +41,21 @@ wk.register({
     f = { find_files, "Find Files" },
     s = { "<cmd>FindSimilarFiles<cr>", "Find Similar Files" },
   },
+  d = { name = "Debug",
+    c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
+    b = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
+    n = { "<cmd>lua require'dap'.step_over()<cr>", "Next" },
+    o = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over" },
+    i = { "<cmd>lua require'dap'.step_into()<cr>", "Step Into" },
+    f = { "<cmd>lua require'dap'.step_out()<cr>", "Finish (Step Out)" },
+    r = { "<cmd>lua require'dap'.repl.open()<cr>", "REPL" },
+    u = { "<cmd>lua require'dapui'.toggle()<cr>", "Toggle UI" },
+    d = { "<cmd>lua require'dap'.disconnect()<cr>", "Disconnect" },
+    e = { "<cmd>lua require'dapui'.eval(nil, { enter = true })<cr>", "Eval Under Cursor" },
+    w = { "<cmd>lua require'dapui'.elements.watches.add()<cr>", "Add Watch" },
+    -- l = { function() require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log message: ')) end, "Logpoint" }, -- rdbg doesn't support logpoints
+    -- x = { "<cmd>lua require'dap'.terminate()<cr>", "Terminate" }, -- kills the server process, not just the debugger
+  },
 }, { prefix = "<leader>" })
 
 
@@ -69,6 +84,23 @@ vim.g.dispatch_tmux_pipe_pane = 1  -- needed so $stdout.tty? is true and reline 
 
 
 
+local function to_quickfix(visual)
+  local lines
+  if visual then
+    local start = vim.fn.getpos("'<")[2]
+    local finish = vim.fn.getpos("'>")[2]
+    lines = vim.api.nvim_buf_get_lines(0, start - 1, finish, false)
+  else
+    lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+  end
+  vim.fn.setqflist({}, ' ', { lines = lines })
+  vim.cmd('copen')
+end
+
+map("v", "<leader>tq", function() to_quickfix(true) end, { desc = "Send selection to quickfix" })
+map("n", "<leader>tq", function() to_quickfix(false) end, { desc = "Send buffer to quickfix" })
+
+map("n", "<leader>so", ":source ~/.config/nvim/init.vim<cr>", {desc = "Source vim config"})
 map("n", "-", ":Oil<cr>", {desc = "Oil - edit file structure"})
 
 vim.api.nvim_create_user_command(

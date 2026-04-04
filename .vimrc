@@ -87,6 +87,10 @@ augroup END
 
 " Don't clear the screen after tests finish
 let g:test#preserve_screen = 1
+set errorformat+=%\\s%#%f:%l\ in\ `%m`
+if executable('dev')
+  let test#ruby#rails#executable = 'dev test'
+endif
 
 let g:tmux_navigator_no_mappings = 1
 

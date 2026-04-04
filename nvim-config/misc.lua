@@ -35,6 +35,14 @@ require 'treesitter-context'.setup {
 
 vim.g.rooter_patterns = { 'Gemfile', '.git', 'Makefile', '*.sln', 'build/env.sh', 'dev.yml' }
 
+-- Quickfix enhancements
+require("quicker").setup({
+	keys = {
+		{ ">", function() require("quicker").expand({ before = 2, after = 2, add_to_existing = true }) end, desc = "Expand context" },
+		{ "<", function() require("quicker").collapse() end, desc = "Collapse context" },
+	},
+})
+
 -- splitjoin - gS to split, gJ to join
 vim.g.splitjoin_trailing_comma = 1
 vim.g.splitjoin_ruby_hanging_args = 0
