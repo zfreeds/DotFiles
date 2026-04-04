@@ -12,7 +12,6 @@ endif
 
 lua require("user/autopair")
 lua require("user/bufferline")
-lua require("user/comment")
 lua require("user/lsp")
 lua require("user/lualine")
 lua require("user/luasnip")

@@ -48,8 +48,6 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'akinsho/toggleterm.nvim', Cond(is_nvim)
 Plug 'lukas-reineke/indent-blankline.nvim', Cond(is_nvim)
 Plug 'windwp/nvim-autopairs', Cond(is_nvim)
-Plug 'numToStr/Comment.nvim', Cond(is_nvim)
-Plug'JoosepAlviste/nvim-ts-context-commentstring', Cond(is_nvim)
 Plug 'nvim-lualine/lualine.nvim', Cond(is_nvim)
 Plug 'akinsho/bufferline.nvim', Cond(is_nvim)
 Plug 'folke/which-key.nvim', Cond(is_nvim)
