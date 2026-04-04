@@ -51,8 +51,8 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'akinsho/toggleterm.nvim', Cond(is_nvim)
 Plug 'lukas-reineke/indent-blankline.nvim', Cond(is_nvim)
 Plug 'windwp/nvim-autopairs', Cond(is_nvim)
-Plug 'numToStr/Comment.nvim', Cond(is_nvim, {'commit':'97a188a98b5a3a6f9b1b850799ac078faa17ab67'})
-	Plug'JoosepAlviste/nvim-ts-context-commentstring', Cond(is_nvim, {'commit' : '4d3a68c41a53add8804f471fcc49bb398fe8de08' })
+Plug 'numToStr/Comment.nvim', Cond(is_nvim)
+	Plug'JoosepAlviste/nvim-ts-context-commentstring', Cond(is_nvim)
 Plug 'kyazdani42/nvim-web-devicons', Cond(is_nvim)
 	Plug 'nvim-lualine/lualine.nvim', Cond(is_nvim)
 	Plug 'akinsho/bufferline.nvim', Cond(is_nvim)
@@ -90,8 +90,8 @@ Plug 'williamboman/mason-lspconfig.nvim', Cond(is_nvim) " simple to use language
 	" Plug 'jose-elias-alvarez/null-ls.nvim', Cond(is_nvim)
 
 " Treesitter
-Plug 'nvim-treesitter/nvim-treesitter', Cond(is_nvim, {'do': ':TSUpdate'})
-Plug 'nvim-treesitter/nvim-treesitter-textobjects', Cond(is_nvim)
+Plug 'nvim-treesitter/nvim-treesitter', Cond(is_nvim, {'branch': 'main', 'do': ':TSUpdate'})
+Plug 'nvim-treesitter/nvim-treesitter-textobjects', Cond(is_nvim, {'branch': 'main'})
 Plug 'RRethy/nvim-treesitter-endwise', Cond(is_nvim)
 Plug 'nvim-treesitter/nvim-treesitter-context', Cond(is_nvim)
 

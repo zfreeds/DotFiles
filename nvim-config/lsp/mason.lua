@@ -28,25 +28,15 @@ require("mason-lspconfig").setup({
 })
 
 
-local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
-if not lspconfig_status_ok then
-	vim.notify("Failed lspconfig")
-	return
+for _, server_name in ipairs(servers) do
+	local opts = {}
+	local require_ok, conf_opts = pcall(require, "user.lsp.settings." .. server_name)
+	if require_ok then
+		opts = vim.tbl_deep_extend("force", conf_opts, opts)
+	end
+	vim.lsp.config(server_name, opts)
+	vim.lsp.enable(server_name)
 end
-
-require("mason-lspconfig").setup_handlers {
-	-- The first entry (without a key) will be the default handler
-	-- and will be called for each installed server that doesn't have
-	-- a dedicated handler.
-	function (server_name) -- default handler
-		local opts = {}
-		local require_ok, conf_opts = pcall(require, "user.lsp.settings." .. server_name)
-		if require_ok then
-			opts = vim.tbl_deep_extend("force", conf_opts, opts)
-		end
-		lspconfig[server_name].setup(opts)
-	end,
-}
 
 
 

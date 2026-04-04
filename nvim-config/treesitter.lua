@@ -1,52 +1,45 @@
-local status_ok, configs = pcall(require, "nvim-treesitter.configs")
+local status_ok, ts = pcall(require, "nvim-treesitter")
 if not status_ok then
-	 print("failed on treesitter")
+	print("failed on treesitter")
 	return
 end
 
-configs.setup({
-	ensure_installed = "all", -- one of "all" or a list of languages
-	ignore_install = { "" }, -- List of parsers to ignore installing
-	highlight = {
-		enable = true,
-		disable = { "" }, -- list of language that will be disabled
-	},
-	autopairs = {
-		enable = true,
-	},
-	endwise = {
-        enable = true,
-    },
-	indent = { enable = true, disable = { "python" } },
-	context_commentstring = {
-		enable = true,
-		enable_autocmd = false
-	},
-	textobjects = {
+-- TODO: change back to "all" once tree-sitter-cli is installed (brew install tree-sitter-cli or npm install -g tree-sitter-cli)
+ts.install({ "ruby" })
+
+local ts_augroup = vim.api.nvim_create_augroup('TreesitterSetup', { clear = true })
+vim.api.nvim_create_autocmd('FileType', {
+	group = ts_augroup,
+	pattern = '*',
+	callback = function()
+		if pcall(vim.treesitter.start) then
+			vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+		end
+	end,
+})
+
+-- Textobjects
+local ts_textobjects_ok, ts_textobjects = pcall(require, "nvim-treesitter-textobjects")
+if ts_textobjects_ok then
+	ts_textobjects.setup({
 		select = {
-			enable = true,
-
-			-- Automatically jump forward to textobj, similar to targets.vim
 			lookahead = false,
-
-			keymaps = {
-				-- You can use the capture groups defined in textobjects.scm
-				["af"] = "@function.outer",
-				["if"] = "@function.inner",
-				["ac"] = "@class.outer",
-				["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
-				["ib"] = { query = "@block.inner"},
-				["ab"] = { query = "@block.outer"},
-			},
 			selection_modes = {
 				['@function.outer'] = 'V', -- linewise
 			},
-			-- If you set this to `true` (default is `false`) then any textobject is
-			-- extended to include preceding or succeeding whitespace. Succeeding
-			-- whitespace has priority in order to act similarly to eg the built-in
-			-- `ap`.
 			include_surrounding_whitespace = false,
 		},
-	}
-})
+	})
+
+	local select_textobject = require("nvim-treesitter-textobjects.select").select_textobject
+	local function tso(key, query)
+		vim.keymap.set({ "x", "o" }, key, function() select_textobject(query, "textobjects") end)
+	end
+	tso("af", "@function.outer")
+	tso("if", "@function.inner")
+	tso("ac", "@class.outer")
+	tso("ic", "@class.inner")
+	tso("ib", "@block.inner")
+	tso("ab", "@block.outer")
+end
 

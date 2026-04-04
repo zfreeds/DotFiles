@@ -100,7 +100,6 @@ end
 map("v", "<leader>tq", function() to_quickfix(true) end, { desc = "Send selection to quickfix" })
 map("n", "<leader>tq", function() to_quickfix(false) end, { desc = "Send buffer to quickfix" })
 
-map("n", "<leader>so", ":source ~/.config/nvim/init.vim<cr>", {desc = "Source vim config"})
 map("n", "-", ":Oil<cr>", {desc = "Oil - edit file structure"})
 
 vim.api.nvim_create_user_command(
