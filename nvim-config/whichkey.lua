@@ -22,7 +22,7 @@ vim.api.nvim_create_user_command('BufOnly', 'BufferLineCloseOthers', {})
 
 map("n", "<leader>p", find_files, {desc = "Find files"})
 map("n", "<C-p>", find_files, {desc = "Find files"})
-map("n", "<leader>/", function()fzf_lua.live_grep_glob({file_ignore_patterns = vim.g.fzf_file_ignore_patterns})end, {desc = "Grep"})
+map("n", "<leader>/", function()fzf_lua.live_grep({file_ignore_patterns = vim.g.fzf_file_ignore_patterns})end, {desc = "Grep"})
 map("n", "<leader>:", fzf_lua.commands, {desc = "Find helpful commands"})
 
 wk.register({
@@ -68,8 +68,8 @@ map("n", "<leader>gC", ":GitGutterPrevHunk<cr>", {})
 map("n", "<leader>gc", ":GitGutterNextHunk<cr>", {})
 
 -- # Errors
-map("n", "ge", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", {desc = "Next Error"})
-map("n", "gE", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", {desc = "Prev Error"})
+map("n", "ge", function()vim.diagnostic.jump({count=1, float=true}) end, {desc = "Next Error"})
+map("n", "gE", function()vim.diagnostic.jump({count=-1, float=true}) end, {desc = "Prev Error"})
 
 
 

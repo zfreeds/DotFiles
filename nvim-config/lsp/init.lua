@@ -27,11 +27,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gD', '<cmd>FzfLua lsp_declarations<cr>', add(opts, {desc = "Declaration"}))
     vim.keymap.set('n', 'gi', '<cmd>FzfLua lsp_implementations<cr>', add(opts, {desc = "Implemenation"}))
     vim.keymap.set('n', 'go', '<cmd>FzfLua lsp_definitions<cr>', add(opts, {desc = "Type definition"}))
-    vim.keymap.set('n', 'gr', '<cmd>FzfLua lsp_references<cr>', add(opts, {desc = "References/Usages"}))
+    vim.keymap.set('n', 'gr', function() require('fzf-lua').lsp_references({ fzf_opts = { ['--query'] = '!test ' } }) end, add(opts, {desc = "References/Usages"}))
     vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', add(opts, {desc = "Signature Help"}))
 
-	vim.keymap.set('n', 'ge', function()vim.diagnostic.goto_next({buffer=0}) end, add(opts, {desc = "Next Error"}))
-	vim.keymap.set('n', 'gE', function()vim.diagnostic.goto_prev({buffer=0}) end, add(opts, {desc = "Prev Error"}))
+	vim.keymap.set('n', 'ge', function()vim.diagnostic.jump({count=1, float=true}) end, add(opts, {desc = "Next Error"}))
+	vim.keymap.set('n', 'gE', function()vim.diagnostic.jump({count=-1, float=true}) end, add(opts, {desc = "Prev Error"}))
 	-- Show error
 	vim.keymap.set('n', 'gl', function()vim.diagnostic.open_float() end, opts)
 		-- todo gp for go to parent

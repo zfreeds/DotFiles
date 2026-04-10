@@ -92,6 +92,7 @@ if executable('dev')
   let test#ruby#rails#executable = 'dev test'
 endif
 
+let g:rails_migrations = 0
 let g:tmux_navigator_no_mappings = 1
 
 nnoremap <silent> <C-h> :<C-U>TmuxNavigateLeft<cr>

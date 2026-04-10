@@ -103,6 +103,7 @@ Daily note: [[YYYY-MM-DD-ddd]]
 - Write to `AI/Daily/` only, never to `Journal/Daily/`
 - **After writing or updating any sync note**, set its `last_synced` frontmatter to the current time (e.g. `"2026-02-20T12:30"`). The next sync determines its lookback point by reading `last_synced` from the most recent `Sync-*.md`.
 - **Only today's note gets the `🎯 Suggested Focus` section.** Backfilled past-day notes should omit it — stale priorities aren't useful.
+- **Suggested Focus must be genuinely pending.** Never include items Zack has already completed (reviewed a PR, responded to a thread, shipped a fix). Check Zack's messages and DMs for evidence of completion before including any action-oriented suggestion. If someone asked for a review and Zack's messages show he already engaged with it, skip it.
 
 ### Phase 3: Retroactive Context Updates
 
@@ -142,18 +143,51 @@ Daily note: [[YYYY-MM-DD-ddd]]
 - Suggest priorities based on project deadlines and Slack context
 - Note any anomalies or items needing clarification
 
-### Phase 6: Validate Wiki-Links
+**Stale action item filtering**: Before suggesting "review X PR" or "respond to Y thread" in Suggested Focus or Attention Needed, check whether Zack has already acted on it. Evidence of completion includes:
+- Zack posted a message in the thread after the request
+- The PR shows Zack as a reviewer in Slack context (e.g., someone thanking him, or his comments appearing)
+- Zack's DMs or messages reference the item as done
+- For PR reviews: check GitHub (`gh pr view <number> --json reviews`) to see if Zack already reviewed it
 
-**Objective**: Ensure all person mentions use [[wiki-links]].
+If Zack has already acted, do NOT surface it as a todo. Only include genuinely pending items where there's no evidence of completion.
+
+### Phase 6: Validate Wiki-Links and Zettelkasten Linking
+
+**Objective**: Build a rich backlink graph by wiki-linking people, existing user notes, and recurring concepts throughout all sync output.
+
+**Before writing notes**: Read the user's note titles at `/Users/zackfreedman/obsidian/shopify/*.md` (just `ls`, don't read contents) to know what linkable notes exist. This is a READ-ONLY step — never modify the user's notes.
 
 **People References**:
-- Always use full names in `[[wiki-links]]` (broken links are fine)
+- Always use full names in `[[wiki-links]]` (broken links are fine — Obsidian still tracks them)
 - Partial names (e.g., "Cam") should resolve to full name `[[Cameron Bothner]]` based on context
 - If AI needs to write notes about a person, use `AI/People/Generated-Full-Name.md`
+- Do NOT wiki-link names in Slack usernames or email addresses
+
+**Link to existing user notes aggressively**: When a sync note discusses a topic that matches an existing note in the vault, wiki-link it. Examples:
+- Discussing tariff misclassification → `[[Section 232]]`
+- ATC rotation → `[[ATC]]`
+- Carrier service work → `[[Markets Pro App Carrier Service]]` or `[[Adaptive Shipping]]`
+- Breakdown calculator → `[[Adaptive Pricing]]`
+- Global-e billing → `[[Global-E]]`
+- Flag cleanup → `[[Feature Flags]]`
+- Coefficient work → `[[Adaptive Pricing]]`
+- Sellability → `[[Fast Sellability]]`
+- Tax-related → `[[Duties and Taxes]]`, `[[Active Tax]]`, etc.
+- Incident response → `[[Incident]]`
+
+**Wiki-link recurring concepts** even if no backing file exists yet: Obsidian's backlink graph will show every sync note that mentioned the topic, making it searchable and traceable over time. The test: "Would someone reasonably search for this topic or want to see when it came up across multiple syncs?" If yes, link it.
+
+Good recurring concept links: `[[Transaction Breakdowns]]`, `[[Shipping Label Costs]]`, `[[Default-on Experiment]]`, `[[Coefficient]]`, `[[Resiliency Backlog]]`, `[[Onboarding]]`, `[[Country Expansion]]`
+
+Do NOT link one-off incidents or throwaway details (e.g., "DHL RTS duties for one merchant", "Cassidy's pet grooming tariff question"). These don't accumulate useful backlinks.
+
+**Avoiding duplicate note names**: Obsidian doesn't allow duplicate filenames across the vault. Before creating any new file in `AI/`, check the user's existing note names (`ls /Users/zackfreedman/obsidian/shopify/*.md`). If a note with that name already exists in the user's personal notes, prepend `AI - ` to avoid naming conflicts (e.g. `AI - Adaptive Pricing.md`).
 
 **Rules**:
-- Convert all person mentions to `[[Full Name]]` wiki-links
-- Do NOT wiki-link names in Slack usernames or email addresses
+- Link liberally — broken links (no backing file) are fine and expected
+- Don't create new note files for every concept; the wiki-link alone provides value
+- Only create a new `AI/` note file if you have substantial standalone content for it
+- First occurrence of each link in a section is enough; don't over-link the same term
 
 ## Channel List
 

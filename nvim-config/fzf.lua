@@ -15,7 +15,8 @@ fzf_lua.setup{
 		width = 0.9,
 	},
 	lsp = {
-		includeDeclaration = false
+		includeDeclaration = false,
+		async_or_timeout = true,
 	},
 	fzf_opts = {
 		["--layout"] = "reverse"
